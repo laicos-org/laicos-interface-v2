@@ -67,8 +67,9 @@ const navConfig = [
   {
     subheader: 'List',
     items: [
+      
       // USER
-      // { title: 'wallet', icon: ICONS.user, path: PATH_DASHBOARD.user.profile },
+      { title: 'Profiles', icon: ICONS.user, path: PATH_DASHBOARD.user.profile },
       {
         title: 'Top DN404',
         path: PATH_DASHBOARD.dn404.root,
