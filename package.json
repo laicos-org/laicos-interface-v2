@@ -33,6 +33,7 @@
     ]
   },
   "dependencies": {
+    "@aptos-labs/wallet-adapter-react": "^3.6.2",
     "@auth0/auth0-spa-js": "^2.0.0",
     "@emotion/cache": "^11.10.5",
     "@emotion/react": "^11.10.5",
