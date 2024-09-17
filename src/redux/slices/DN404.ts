@@ -8,6 +8,7 @@ import axios from '../../utils/axios';
 import { IDN404MetaDataState, ICheckoutCartItem } from '../../@types/DN404';
 // import DN404Inprogress from "../../DN404.list.json"
 import DN404Medias from "../../DN404.media.json"
+import DN404Lists from "../../DN404.list.json"
 // ----------------------------------------------------------------------
 
 const initialState: IDN404MetaDataState = {
@@ -220,15 +221,21 @@ export function getProduct(name: string) {
     dispatch(slice.actions.startLoading());
     try {
       const response = await axios.get('/api/product/details', {
-        params: { productId: 'e99f09a7-dd88-49d5-b1c8-1daf80c2d7b2' },
+        params: { productId: 'e99f09a7-dd88-49d5-b1c8-1daf80c2d7b1' },
       });
-      const _product = response.data.product
+
+      const _product = response.data.product || randomInArray(DN404Lists.products)
       _product.images = [randomInArray(DN404Medias),randomInArray(DN404Medias),randomInArray(DN404Medias),randomInArray(DN404Medias),randomInArray(DN404Medias),randomInArray(DN404Medias)]
       _product.coverUrl = randomInArray(DN404Medias)
       dispatch(slice.actions.getProductSuccess(_product));
+
     } catch (error) {
       console.error(error);
-      dispatch(slice.actions.hasError(error));
+      const _product = randomInArray(DN404Lists.products)
+      _product.images = [randomInArray(DN404Medias),randomInArray(DN404Medias),randomInArray(DN404Medias),randomInArray(DN404Medias),randomInArray(DN404Medias),randomInArray(DN404Medias)]
+      _product.coverUrl = randomInArray(DN404Medias)
+      dispatch(slice.actions.getProductSuccess(_product));
+      // dispatch(slice.actions.hasError(error));
     }
   };
 }

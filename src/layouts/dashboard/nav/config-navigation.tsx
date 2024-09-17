@@ -12,9 +12,8 @@ const icon = (name: string) => (
   <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
 );
 
-const ICONS = {
+export const ICONS = {
   blog: icon('ic_blog'),
-
   cart: icon('ic_cart'),
   chat: icon('ic_chat'),
   mail: icon('ic_mail'),
@@ -44,8 +43,13 @@ const navConfig = [
     subheader: 'general',
     items: [
       {
-        title: 'home',
+        title: 'Analytics',
         path: PATH_DASHBOARD.general.app,
+        icon: ICONS.analytics,
+      },
+      {
+        title: 'Home',
+        path: PATH_DASHBOARD.general.home,
         icon: ICONS.analytics,
       },
       // { title: 'ecommerce', path: PATH_DASHBOARD.general.ecommerce, icon: ICONS.ecommerce },
