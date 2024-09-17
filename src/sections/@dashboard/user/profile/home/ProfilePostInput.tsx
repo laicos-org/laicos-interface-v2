@@ -54,11 +54,11 @@ export default function ProfilePostInput() {
 
       <Stack direction="row" alignItems="center" justifyContent="space-between" onFocus={() => setHeight(200)}>
         <Stack direction="row" spacing={1} alignItems="left" justifyContent="space-between">
-          <IconButton color="success"><Iconify icon="eva:image-2-fill" width={24} /></IconButton>
-          <IconButton color="info"><Iconify icon="eva:video-fill" width={24} /></IconButton>
-          <IconButton color="warning"><Iconify icon="eva:navigation-2-fill" width={24}  /></IconButton>
-          <IconButton color="error"><Iconify icon="eva:pricetags-fill" width={24}  /></IconButton>
-          <IconButton color="primary"><Iconify icon="eva:smiling-face-fill" width={24} /></IconButton>
+          <IconButton color="success" onClick={handleClickAttach}><Iconify icon="eva:image-2-fill" width={24} /></IconButton>
+          <IconButton color="info" onClick={handleClickAttach}><Iconify icon="eva:video-fill" width={24} /></IconButton>
+          <IconButton color="warning" onClick={handleClickAttach}><Iconify icon="eva:navigation-2-fill" width={24}  /></IconButton>
+          <IconButton color="error" onClick={handleClickAttach}><Iconify icon="eva:pricetags-fill" width={24}  /></IconButton>
+          <IconButton color="primary" onClick={handleClickAttach}><Iconify icon="eva:smiling-face-fill" width={24} /></IconButton>
         </Stack>
         <Button color="success" variant="soft"><Iconify icon="eva:edit-2-outline" pr={0.5} width={24} /> Post</Button>
       </Stack>
