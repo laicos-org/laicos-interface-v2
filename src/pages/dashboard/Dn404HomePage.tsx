@@ -52,14 +52,6 @@ export default function DN404HomePage() {
 
   const { themeStretch } = useSettingsContext();
   const isMobile = useResponsive('down', 'sm');
-
-  document.body.style.overflow = "hidden";
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-    return () => {
-        document.body.style.overflow = "scroll"
-    };
-}, []);
   return (
     <>
       <Helmet>

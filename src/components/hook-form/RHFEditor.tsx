@@ -42,7 +42,7 @@ export default function RHFEditor({ name, helperText, ...other }: Props) {
           error={!!error}
           helperText={
             (!!error || helperText) && (
-              <FormHelperText error={!!error} sx={{ px: 2 }}>
+              <FormHelperText error={!!error} sx={{ px: 2, border: 'none' }}>
                 {error ? error?.message : helperText}
               </FormHelperText>
             )

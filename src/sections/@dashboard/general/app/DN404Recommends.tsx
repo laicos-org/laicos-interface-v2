@@ -83,7 +83,7 @@ function ApplicationItem({ app }: ApplicationItemProps) {
       </Box>
 
       <Stack alignItems="flex-end" sx={{ pr: 3 }}>
-        <Button>Follow</Button>
+        <Button color="success" variant="soft">Follow</Button>
         {/* <Rating readOnly size="small" precision={0.5} name="reviews" value={rating} />
         <Typography variant="caption" sx={{ mt: 0.5, color: 'text.secondary' }}>
           {fShortenNumber(review)} reviews

@@ -24,7 +24,7 @@ export default function ProfilePostInput() {
     tags: Yup.array().min(2, 'Must have at least 2 tags'),
     metaKeywords: Yup.array().min(1, 'Meta keywords is required'),
     cover: Yup.mixed().required('Cover is required').nullable(true),
-    content: Yup.string().required('Content is required'),
+    content: Yup.string(),
   });
   const defaultValues = {
     title: '',
@@ -43,16 +43,16 @@ export default function ProfilePostInput() {
     resolver: yupResolver(NewBlogSchema),
     defaultValues,
   });
-  const [height, setHeight] = useState(120);
+  const [height, setHeight] = useState(0);
   return (
-    <Card sx={{ p: 3 }} onFocus={() => setHeight(200)} onBlur={() => setHeight(120)}>
-      <Stack spacing={1} pb={2}>
+    <Card sx={{ p: 3}} >
+      <Stack spacing={1} pb={0} sx={{height, transition: '0.4s', ...(height === 0 ? {opacity: '0'} : {opacity: '1'})}} onBlur={() => setHeight(0)}>
         <FormProvider methods={methods} onSubmit={() => {}}>
-          <RHFEditor simple name="content" sx={{ height, transition: '0.2s' }} />
+          <RHFEditor simple name="content" sx={{border: 'none'}}/>
         </FormProvider>
       </Stack>
 
-      <Stack direction="row" alignItems="center" justifyContent="space-between">
+      <Stack direction="row" alignItems="center" justifyContent="space-between" onFocus={() => setHeight(200)}>
         <Stack direction="row" spacing={1} alignItems="left" justifyContent="space-between">
           <IconButton color="success"><Iconify icon="eva:image-2-fill" width={24} /></IconButton>
           <IconButton color="info"><Iconify icon="eva:video-fill" width={24} /></IconButton>
@@ -60,8 +60,7 @@ export default function ProfilePostInput() {
           <IconButton color="error"><Iconify icon="eva:pricetags-fill" width={24}  /></IconButton>
           <IconButton color="primary"><Iconify icon="eva:smiling-face-fill" width={24} /></IconButton>
         </Stack>
-
-        <Button variant="contained">Post</Button>
+        <Button color="success" variant="soft"><Iconify icon="eva:edit-2-outline" pr={0.5} width={24} /> Post</Button>
       </Stack>
 
       <input ref={fileInputRef} type="file" style={{ display: 'none' }} />
