@@ -1,6 +1,16 @@
 import { Helmet } from 'react-helmet-async';
 // @mui
-import { Container, Divider, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack } from '@mui/material';
+import {
+  Container,
+  Divider,
+  Grid,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  Stack,
+} from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 // auth
 import DN404Invite from 'src/sections/@dashboard/general/app/DN404Invite';
@@ -10,10 +20,18 @@ import ProfilePostInput from 'src/sections/@dashboard/user/profile/home/ProfileP
 import useResponsive from 'src/hooks/useResponsive';
 import { ICON } from 'src/config-global';
 import { ICONS } from 'src/layouts/dashboard/nav/config-navigation';
-import {EmailInboxIcon} from 'src/assets/icons';
+import { EmailInboxIcon } from 'src/assets/icons';
+import { AnalyticsOrderTimeline } from 'src/sections/@dashboard/general/analytics';
+import {useEffect} from 'react';
 import { useAuthContext } from '../../auth/useAuthContext';
 // _mock_
-import { _appRelated, _appRelated2, _bookingReview, _userFeeds } from '../../_mock/arrays';
+import {
+  _appRelated,
+  _appRelated2,
+  _bookingReview,
+  _userFeeds,
+  _analyticOrderTimeline,
+} from '../../_mock/arrays';
 // components
 import { useSettingsContext } from '../../components/settings';
 // sections
@@ -35,6 +53,13 @@ export default function DN404HomePage() {
   const { themeStretch } = useSettingsContext();
   const isMobile = useResponsive('down', 'sm');
 
+  document.body.style.overflow = "hidden";
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+        document.body.style.overflow = "scroll"
+    };
+}, []);
   return (
     <>
       <Helmet>
@@ -46,17 +71,26 @@ export default function DN404HomePage() {
           {!isMobile ? (
             <Grid item xs={12} md={3} sx={{ position: 'sticky', top: 0 }}>
               <Stack spacing={3}>
-                {/* {sideSetting.map((data, _) => (
-                  <ListItem key={_} sx={{ px: 2 }}>
-                    {data.name}
-                  </ListItem>
-                ))} */}
+                <AnalyticsOrderTimeline title="Last acitivity" list={_analyticOrderTimeline} />
               </Stack>
             </Grid>
           ) : (
             ''
           )}
-          <Grid item xs={12} md={isMobile ? 12 : 6} sx={{ overflowY: 'auto', maxHeight: '100vh' }}>
+          <Grid
+            item
+            xs={12}
+            md={isMobile ? 12 : 5}
+            sx={{
+              overflowY: 'scroll',
+              maxHeight: '100vh',
+              '&::-webkit-scrollbar': {
+                display: 'none',
+              },
+              '-ms-overflow-style': 'none', // IE and Edge
+              'scrollbar-width': 'none', // Firefox
+            }}
+          >
             <Stack spacing={3}>
               <ProfilePostInput />
               {_userFeeds.map((post) => (
@@ -66,7 +100,7 @@ export default function DN404HomePage() {
           </Grid>
           {!isMobile ? (
             <Grid item xs={12} md={3} sx={{ position: 'sticky', top: 0 }}>
-              <Stack spacing={3}>
+              <Stack spacing={4}>
                 <DN404Invite
                   title="Invite friends to Laicos"
                   subheader="Send your friend a link to signup or gift them an invitation to join for free."

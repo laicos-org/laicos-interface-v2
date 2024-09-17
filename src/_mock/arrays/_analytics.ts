@@ -11,16 +11,21 @@ export const _analyticPost = [...Array(5)].map((_, index) => ({
   postedAt: _mock.time(index),
 }));
 
-export const _analyticOrderTimeline = [...Array(5)].map((_, index) => ({
+export const _analyticOrderTimeline = [...Array(10)].map((_, index) => ({
   id: _mock.id(index),
   title: [
-    '1983, orders, $4220',
-    '12 Invoices have been paid',
-    'Order #37745 from September',
-    'New order placed #XF-2356',
-    'New order placed #XF-2346',
+    'User @john_doe liked your post',
+    'You have 12 new followers',
+    '@alice commented on your post',
+    'New NFT created: #NFT-2356',
+    'You joined the #Web3 community',
+    '@charlie shared your content',
+    'New vote in governance poll #1023',
+    '@david followed you',
+    'Your post was promoted to trending',
+    'Community event: "NFT Fair Launch" started',
   ][index],
-  type: `order${index + 1}`,
+  type: `social_activity${index + 1}`,
   time: _mock.time(index),
 }));
 
