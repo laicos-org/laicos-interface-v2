@@ -81,10 +81,6 @@ export default function ProfilePostInput() {
     <Card sx={{ p: 3 }}>
       <FormProvider
         methods={methods}
-        onSubmit={() => {
-          setOpenWrite(false);
-          reset();
-        }}
       >
         <Stack
           spacing={1}
@@ -139,10 +135,7 @@ export default function ProfilePostInput() {
             color="success"
             variant="soft"
             onClick={() => {
-              if (openWrite) {
                 reset();
-                setOpenWrite(false);
-              }
             }}
           >
             <Iconify icon="eva:edit-2-outline" pr={0.5} width={24} /> Post
