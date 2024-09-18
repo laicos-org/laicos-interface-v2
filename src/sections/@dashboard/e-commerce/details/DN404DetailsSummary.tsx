@@ -48,7 +48,7 @@ type StyledThumbnailsContainerProps = {
   length: number;
 };
 
-const StyledThumbnailsContainer = styled('div', {
+export const StyledThumbnailsContainer = styled('div', {
   shouldForwardProp: (prop) => prop !== 'length',
 })<StyledThumbnailsContainerProps>(({ length, theme }) => ({
   margin: theme.spacing(0, 'auto'),

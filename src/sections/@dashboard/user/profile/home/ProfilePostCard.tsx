@@ -1,10 +1,12 @@
 import { useState, useRef } from 'react';
 // @mui
-import { alpha } from '@mui/material/styles';
+import { alpha, useTheme } from '@mui/material/styles';
+import { Link as RouterLink } from 'react-router-dom';
+
 import {
   Box,
-  Link,
   Card,
+  Link,
   Stack,
   Paper,
   Checkbox,
@@ -14,14 +16,26 @@ import {
   IconButton,
   InputAdornment,
   FormControlLabel,
+  LinearProgress,
+  Tooltip,
+  Grid,
+  Button,
 } from '@mui/material';
 // @types
+import { useLocales } from 'src/locales';
+import { NOTPUMP_DEFINE_FAIRLAUNCH } from 'src/descriptions/DN404';
+import { ColorPreview } from 'src/components/color-utils';
+import { randomInArray } from 'src/_mock';
+import { AppWidgetSummary } from 'src/sections/@dashboard/general/app';
+import { useSelector } from 'src/redux/store';
+import { PATH_DASHBOARD } from 'src/routes/paths';
+import { paramCase } from 'change-case';
 import { IUserProfilePost } from '../../../../../@types/user';
 // auth
 import { useAuthContext } from '../../../../../auth/useAuthContext';
 // utils
 import { fDate } from '../../../../../utils/formatTime';
-import { fShortenNumber } from '../../../../../utils/formatNumber';
+import { fCurrency, fShortenNumber } from '../../../../../utils/formatNumber';
 // components
 import Image from '../../../../../components/image';
 import Iconify from '../../../../../components/iconify';
@@ -41,11 +55,15 @@ export default function ProfilePostCard({ post }: Props) {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [isLiked, setLiked] = useState(post.isLiked);
+  const { translate } = useLocales();
 
   const [likes, setLikes] = useState(post.personLikes.length);
 
   const [message, setMessage] = useState('');
-
+  const theme = useTheme();
+  const { products, checkout } = useSelector((state) => state.product);
+  const product = randomInArray(products || []);
+  const linkTo = PATH_DASHBOARD.dn404.view(paramCase(product?.name || ''));
   const hasComments = post.comments.length > 0;
 
   const handleLike = () => {
@@ -57,7 +75,7 @@ export default function ProfilePostCard({ post }: Props) {
     setLiked(false);
     setLikes((prevLikes) => prevLikes - 1);
   };
-
+  // const linkTo = PATH_DASHBOARD.dn404.view(paramCase(name));
   const handleChangeMessage = (value: string) => {
     setMessage(value);
   };
@@ -75,13 +93,34 @@ export default function ProfilePostCard({ post }: Props) {
       current.focus();
     }
   };
-
+  const colors = [
+    '#2EC4B6',
+    '#E71D36',
+    '#FF9F1C',
+    '#011627',
+    '#92140C',
+    '#FFCF99',
+    '#0CECDD',
+    '#FFF338',
+    '#FF67E7',
+    '#C400FF',
+    '#52006A',
+    '#046582',
+    '#845EC2',
+    '#E4007C',
+    '#2A1A5E',
+    '#090088',
+  ];
   return (
     <Card>
       <CardHeader
         disableTypography
         avatar={
-          <CustomAvatar src={post.author?.avatarUrl} alt={post.author?.name} name={post.author?.name} />
+          <CustomAvatar
+            src={post.author?.avatarUrl}
+            alt={post.author?.name}
+            name={post.author?.name}
+          />
         }
         title={
           <Link color="inherit" variant="subtitle2">
@@ -89,8 +128,14 @@ export default function ProfilePostCard({ post }: Props) {
           </Link>
         }
         subheader={
-          <Typography variant="caption" component="div" sx={{ color: 'text.secondary' }}>
-            {fDate(post.createdAt)}
+          <Typography variant="caption" component="div">
+            <Link
+              component={RouterLink}
+              to={linkTo}
+              sx={{ color: 'text.secondary', cursor: 'pointer' }}
+            >
+              {fDate(post.createdAt)}
+            </Link>
           </Typography>
         }
         action={
@@ -102,21 +147,22 @@ export default function ProfilePostCard({ post }: Props) {
 
       <Typography
         sx={{
-          p: (theme) => theme.spacing(3, 3, 2, 3),
+          p: (_theme) => _theme.spacing(3, 3, 2, 3),
         }}
       >
         {post.message}
       </Typography>
-
-      <Box sx={{ p: 1 }}>
-        <Image alt="post media" src={post.media} ratio="16/9" sx={{ borderRadius: 1 }} />
+      <Box sx={{ p: 1, cursor: 'pointer' }}>
+        <Link component={RouterLink} to={linkTo}>
+          <Image alt="post media" src={post.media} ratio="16/9" sx={{ borderRadius: 1 }} />
+        </Link>
       </Box>
 
       <Stack
         direction="row"
         alignItems="center"
         sx={{
-          p: (theme) => theme.spacing(2, 3, 3, 3),
+          p: (_theme) => _theme.spacing(2, 3, 3, 3),
         }}
       >
         <FormControlLabel
@@ -189,7 +235,7 @@ export default function ProfilePostCard({ post }: Props) {
         direction="row"
         alignItems="center"
         sx={{
-          p: (theme) => theme.spacing(0, 3, 3, 3),
+          p: (_theme) => _theme.spacing(0, 3, 3, 3),
         }}
       >
         <CustomAvatar src={user?.photoURL} alt={user?.displayName} name={user?.displayName} />
@@ -215,7 +261,7 @@ export default function ProfilePostCard({ post }: Props) {
             pl: 1.5,
             height: 40,
             borderRadius: 1,
-            border: (theme) => `solid 1px ${alpha(theme.palette.grey[500], 0.32)}`,
+            border: (_theme) => `solid 1px ${alpha(_theme.palette.grey[500], 0.32)}`,
           }}
         />
 
