@@ -184,9 +184,9 @@ export default function Router() {
         { path: 'booking', element: <GeneralBookingPage /> },
         { path: 'file', element: <GeneralFilePage /> },
         {
-          path: 'dn404s',
+          path: 'nfts',
           children: [
-            { element: <Navigate to="/dashboard/dn404s/bonding-curve" replace />, index: true },
+            { element: <Navigate to="/dashboard/nfts/bonding-curve" replace />, index: true },
             { path: 'bonding-curve', element: <DN404Fairlaunch /> },
             { path: 'bonding-curve/:name', element: <DN404DetailsPage /> },
             // { path: 'create', element: <DN404Create/>},

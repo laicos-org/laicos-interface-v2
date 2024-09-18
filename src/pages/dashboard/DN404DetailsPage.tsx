@@ -5,7 +5,7 @@ import {useParams} from 'react-router-dom';
 import {Box,Card,Container,Divider,Grid,Stack,Tab,Tabs,Typography} from '@mui/material';
 import {alpha} from '@mui/material/styles';
 // redux
-import {LAICOS_DN404} from 'src/descriptions/DN404';
+import {LAICOS_DEFINE_FAIRLAUNCH, LAICOS_DN404} from 'src/descriptions/DN404';
 import {addToCart,getProduct,gotoStep} from '../../redux/slices/DN404';
 import {useDispatch,useSelector} from '../../redux/store';
 // routes
@@ -98,7 +98,7 @@ export default function DN404DetailsPage() {
           heading={`${product?.name.split(' ')[0].toUpperCase()} / (${product?.name})`}
           links={[
             {
-              name: LAICOS_DN404
+              name: LAICOS_DEFINE_FAIRLAUNCH
             },
           ]}
         />

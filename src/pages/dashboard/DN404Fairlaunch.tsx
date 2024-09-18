@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 import { Container, Typography, Stack, Tooltip } from '@mui/material';
 // redux
 import {useLocales} from 'src/locales';
-import {DN404_DEFINE, LAICOS_DEFINE_FAIRLAUNCH} from 'src/descriptions/DN404';
+import {DN404_DEFINE, LAICOS_DEFINE_FAIRLAUNCH, LAICOS_DN404} from 'src/descriptions/DN404';
 import {Box} from '@mui/system';
 import Iconify from 'src/components/iconify';
 import { useDispatch, useSelector } from '../../redux/store';
@@ -91,7 +91,7 @@ export default function DN404Fairlaunch() {
   return (
     <>
       <Helmet>
-        <title> DN404 list | Laicos</title>
+        <title> Fairlaunch NFTs | Laicos</title>
       </Helmet>
 
       <FormProvider methods={methods}>
@@ -99,14 +99,14 @@ export default function DN404Fairlaunch() {
           <Typography variant="h4" gutterBottom>
           <Tooltip title={`${translate(LAICOS_DEFINE_FAIRLAUNCH)}`} arrow>
           <Box component="span">
-             DN404 lists
+              Exlusive NFTs Fairlaunch 
             <Iconify icon="eva:info-outline" ml={1} color="gray" width={16} />
           </Box>
         </Tooltip>
           </Typography>
 
           <Typography color="GrayText" gutterBottom>
-             {`${translate(DN404_DEFINE)}`}
+             {`${translate(LAICOS_DN404)}`}
           </Typography>
 
           <Stack
