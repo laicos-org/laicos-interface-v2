@@ -99,8 +99,7 @@ export default function ProfilePostInput() {
           pb={0}
           sx={{
             transition: '0.4s',
-            position: 'relative',
-            ...(!openMedia ? { opacity: '0', height: 0 } : { opacity: '1', height: '200px' }),
+            ...(!openMedia ? { opacity: '0', height: 0 } : { opacity: '1', height: 'auto', paddingBottom: 1 }),
           }}
         >
           <RHFUpload
@@ -152,13 +151,13 @@ export default function ProfilePostInput() {
           onFocus={() => setOpenWrite(true)}
         >
           <Stack direction="row" spacing={1} alignItems="left" justifyContent="space-between">
-            <IconButton color="primary" onClick={() => setOpenOptions(true)}>
+            <IconButton color="primary" onClick={() => setOpenOptions(!openOptions)}>
               <Iconify icon="eva:options-2-fill" width={24} />
             </IconButton>
-            <IconButton color="success" onClick={() => setOpenMedia(true)}>
+            <IconButton color="success" onClick={() => setOpenMedia(!openMedia)}>
               <Iconify icon="eva:image-2-fill" width={24} />
             </IconButton>
-            <IconButton color="info" onClick={() => setOpenMedia(true)}>
+            <IconButton color="info" onClick={() => setOpenMedia(!openMedia)}>
               <Iconify icon="eva:video-fill" width={24} />
             </IconButton>
             <IconButton color="warning" onClick={handleClickAttach}>
