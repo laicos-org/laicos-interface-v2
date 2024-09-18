@@ -1,39 +1,39 @@
-import { Helmet } from 'react-helmet-async';
+import {Helmet} from 'react-helmet-async';
 // @mui
 import {
   Container,
   Divider,
   Grid,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
-  Stack,
+  Stack
 } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 // auth
+// form
+// @mui
+// redux
+// routes
+// @types
+// components
+// sections
+
+import useResponsive from 'src/hooks/useResponsive';
+import {ICONS} from 'src/layouts/dashboard/nav/config-navigation';
+import {DN404List} from 'src/sections/@dashboard/e-commerce/shop';
+import {AnalyticsOrderTimeline} from 'src/sections/@dashboard/general/analytics';
 import DN404Invite from 'src/sections/@dashboard/general/app/DN404Invite';
 import DN404Recommends from 'src/sections/@dashboard/general/app/DN404Recommends';
-import { ProfilePostCard } from 'src/sections/@dashboard/user/profile';
+import {ProfilePostCard} from 'src/sections/@dashboard/user/profile';
 import ProfilePostInput from 'src/sections/@dashboard/user/profile/home/ProfilePostInput';
-import useResponsive from 'src/hooks/useResponsive';
-import { ICON } from 'src/config-global';
-import { ICONS } from 'src/layouts/dashboard/nav/config-navigation';
-import { EmailInboxIcon } from 'src/assets/icons';
-import { AnalyticsOrderTimeline } from 'src/sections/@dashboard/general/analytics';
-import {useEffect} from 'react';
-import { useAuthContext } from '../../auth/useAuthContext';
+import {useSettingsContext} from '../../components/settings';
+import {useDispatch,useSelector} from '../../redux/store';
 // _mock_
 import {
+  _analyticOrderTimeline,
   _appRelated,
   _appRelated2,
   _bookingReview,
   _userFeeds,
-  _analyticOrderTimeline,
 } from '../../_mock/arrays';
 // components
-import { useSettingsContext } from '../../components/settings';
 // sections
 // assets
 
@@ -46,9 +46,12 @@ const sideSetting = [
   },
 ];
 export default function DN404HomePage() {
-  const { user } = useAuthContext();
 
-  const theme = useTheme();
+  const dispatch = useDispatch();
+
+  const { products, checkout } = useSelector((state) => state.product);
+
+  // const dataFiltered = applyFilter(products, values);
 
   const { themeStretch } = useSettingsContext();
   const isMobile = useResponsive('down', 'sm');
@@ -85,6 +88,7 @@ export default function DN404HomePage() {
           >
             <Stack spacing={3}>
               <ProfilePostInput />
+              <DN404List products={products} loading={!products.length} />
               {_userFeeds.map((post) => (
                 <ProfilePostCard key={post.id} post={post} />
               ))}
