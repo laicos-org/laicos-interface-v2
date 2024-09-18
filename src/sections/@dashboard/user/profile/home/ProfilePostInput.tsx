@@ -6,7 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, Card, Chip, Fab, IconButton, Stack, Typography } from '@mui/material';
 // components
 import { useForm } from 'react-hook-form';
-import FormProvider, { RHFEditor, RHFUpload } from 'src/components/hook-form';
+import FormProvider, { RHFEditor, RHFSwitch, RHFUpload } from 'src/components/hook-form';
 import { FormValuesProps } from 'src/sections/@dashboard/blog/BlogNewPostForm';
 import Iconify from '../../../../../components/iconify';
 
@@ -54,7 +54,7 @@ export default function ProfilePostInput() {
 
   const [openWrite, setOpenWrite] = useState<boolean>(false);
   const [openMedia, setOpenMedia] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [openOptions, setOpenOptions] = useState<boolean>(false);
 
   const handleDrop = useCallback(
     (acceptedFiles: File[]) => {
@@ -75,13 +75,14 @@ export default function ProfilePostInput() {
     setValue('cover', null);
   };
   useEffect(() => {
-    if (openWrite === false) setOpenMedia(false);
+    if (openWrite === false) {
+      setOpenMedia(false);
+      setOpenOptions(false);
+    }
   }, [openWrite]);
   return (
     <Card sx={{ p: 3 }}>
-      <FormProvider
-        methods={methods}
-      >
+      <FormProvider methods={methods}>
         <Stack
           spacing={1}
           pb={0}
@@ -98,7 +99,8 @@ export default function ProfilePostInput() {
           pb={0}
           sx={{
             transition: '0.4s',
-            ...(!openMedia ? { opacity: '0', height: 0 } : { opacity: '1', height: 'wx00px' }),
+            position: 'relative',
+            ...(!openMedia ? { opacity: '0', height: 0 } : { opacity: '1', height: '200px' }),
           }}
         >
           <RHFUpload
@@ -108,6 +110,41 @@ export default function ProfilePostInput() {
             onDelete={handleRemoveFile}
           />
         </Stack>
+
+        <Stack
+          sx={{
+            transition: '0.4s',
+            position: 'relative',
+            ...(!openOptions
+              ? { opacity: '0', height: 0 }
+              : { opacity: '1', height: 'auto', paddingTop: 1, paddingBottom: 1 }),
+          }}
+          direction="column"
+          alignItems="left"
+          justifyContent="space-between"
+        >
+          <RHFSwitch
+            name="publish"
+            label="Private"
+            labelPlacement="start"
+            sx={{ mb: 0, mx: 0, width: 1, justifyContent: 'space-between' }}
+          />
+
+          <RHFSwitch
+            name="fairlaunch"
+            label="Fairlaunch"
+            labelPlacement="start"
+            sx={{ mx: 0, width: 1, justifyContent: 'space-between' }}
+          />
+
+          <RHFSwitch
+            name="derivative"
+            label="Community Derivative"
+            labelPlacement="start"
+            sx={{ mx: 0, width: 1, justifyContent: 'space-between' }}
+          />
+        </Stack>
+
         <Stack
           direction="row"
           alignItems="center"
@@ -115,10 +152,13 @@ export default function ProfilePostInput() {
           onFocus={() => setOpenWrite(true)}
         >
           <Stack direction="row" spacing={1} alignItems="left" justifyContent="space-between">
+            <IconButton color="primary" onClick={() => setOpenOptions(true)}>
+              <Iconify icon="eva:options-2-fill" width={24} />
+            </IconButton>
             <IconButton color="success" onClick={() => setOpenMedia(true)}>
               <Iconify icon="eva:image-2-fill" width={24} />
             </IconButton>
-            <IconButton color="info" onClick={handleClickAttach}>
+            <IconButton color="info" onClick={() => setOpenMedia(true)}>
               <Iconify icon="eva:video-fill" width={24} />
             </IconButton>
             <IconButton color="warning" onClick={handleClickAttach}>
@@ -127,15 +167,12 @@ export default function ProfilePostInput() {
             <IconButton color="error" onClick={handleClickAttach}>
               <Iconify icon="eva:pricetags-fill" width={24} />
             </IconButton>
-            <IconButton color="primary" onClick={handleClickAttach}>
-              <Iconify icon="eva:smiling-face-fill" width={24} />
-            </IconButton>
           </Stack>
           <Button
             color="success"
             variant="soft"
             onClick={() => {
-                reset();
+              reset();
             }}
           >
             <Iconify icon="eva:edit-2-outline" pr={0.5} width={24} /> Post
