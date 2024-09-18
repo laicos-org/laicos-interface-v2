@@ -1,4 +1,4 @@
 export const formatAddress = (address?: string ) => {
     if(!address) return '';
-    return `${address.slice(0,5)}...${address.slice(-5,100000)}`
+    return `${address.slice(0,7)}...${address.slice(-7,100000)}`
 }

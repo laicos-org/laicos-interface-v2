@@ -1,3 +1,4 @@
+import {formatAddress} from 'src/utils/formatAddress';
 import _mock from '../_mock';
 import { randomNumberRange, randomInArray } from '../utils';
 import DN404Medias from "../../DN404.media.json"
@@ -52,7 +53,7 @@ export const _userFeeds = [...Array(20)].map((_, index) => ({
   author: {
     id: _mock.id(8),
     avatarUrl: randomInArray(DN404Medias),
-    name: 'Caitlyn Kerluke',
+    name: 'david.ens.laicos',
   },
   isLiked: true,
   createdAt: _mock.time(index),
@@ -68,7 +69,7 @@ export const _userFeeds = [...Array(20)].map((_, index) => ({
       author: {
         id: _mock.id(8),
         avatarUrl: randomInArray(DN404Medias),
-        name: _mock.name.fullName(index + 5),
+        name: formatAddress('0xa371D544318AA431a3ABAD9702B10B20029bd977'),
       },
       createdAt: _mock.time(2),
       message: 'Praesent venenatis metus at',
@@ -78,7 +79,7 @@ export const _userFeeds = [...Array(20)].map((_, index) => ({
       author: {
         id: _mock.id(10),
         avatarUrl: randomInArray(DN404Medias),
-        name: _mock.name.fullName(index + 6),
+        name: formatAddress('0xdEc91a05108713067ee6BaB1A999381623E5c0AE'),
       },
       createdAt: _mock.time(3),
       message:

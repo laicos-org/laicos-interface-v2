@@ -63,7 +63,7 @@ export default function ProfilePostCard({ post }: Props) {
   const theme = useTheme();
   const { products, checkout } = useSelector((state) => state.product);
   const product = randomInArray(products || []);
-  const linkTo = PATH_DASHBOARD.dn404.view(paramCase(product?.name || ''));
+  const linkTo = PATH_DASHBOARD.dn404.view(paramCase(product?.name || 'sophisticated-brogues'));
   const hasComments = post.comments.length > 0;
 
   const handleLike = () => {
