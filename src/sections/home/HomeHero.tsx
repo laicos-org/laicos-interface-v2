@@ -145,8 +145,8 @@ function Description() {
   return (
     <StyledDescription>
       <m.div variants={varFade().in}>
-        <Typography variant="h2" sx={{ textAlign: 'center' }}>
-         User-Friendly NFT and Token Ecosystem
+        <Typography variant="h3" sx={{ textAlign: 'center' }}>
+          Own Your Digital World
         </Typography>
       </m.div>
 
@@ -166,9 +166,9 @@ function Description() {
 
       <m.div variants={varFade().in}>
         <Typography variant="body2" sx={{ textAlign: 'center' }}>
-        Generate user-friendly NFTs and tokens effortlessly with DN-404 (ERC-404), all for a very low cost, starting at just ~$0.2.
+          Revolutionize Your Social Experience. Own Your Data, Control Your Content, and Access Exclusive Features with Web3 Technology
         </Typography>
-      </m.div>
+        </m.div>
 
       <m.div variants={varFade().in}>
         <Stack spacing={1.5} direction={{ xs: 'column-reverse', sm: 'row' }} sx={{ my: 5 }}>
@@ -196,7 +196,7 @@ function Description() {
               variant="caption"
               target="_blank"
               rel="noopener"
-              href="https://github.com/not-found-pump"
+              href="https://github.com/laicos-org"
               sx={{ textDecoration: 'underline', display: 'inline-flex', alignItems: 'center' }}
             >
               <Iconify icon="eva:external-link-fill" width={16} sx={{ mr: 0.5 }} />
@@ -211,10 +211,10 @@ function Description() {
             startIcon={<Iconify icon="eva:external-link-fill" width={24} />}
             target="_blank"
             rel="noopener"
-            href="https://github.com/not-found-pump/dn404"
+            href="https://github.com/laicos-org/dn404"
             sx={{ borderColor: 'text.primary' }}
           >
-            DN404 Docs
+            Docs
           </Button>
         </Stack>
       </m.div>
