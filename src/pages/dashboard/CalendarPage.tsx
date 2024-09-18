@@ -242,7 +242,7 @@ export default function CalendarPage() {
   return (
     <>
       <Helmet>
-        <title> Calendar | NotPump</title>
+        <title> Calendar | Laicos</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>

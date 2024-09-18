@@ -28,7 +28,7 @@ export default function DemoEditorPage() {
   return (
     <>
       <Helmet>
-        <title> Extra Components: Editor | NotPump</title>
+        <title> Extra Components: Editor | Laicos</title>
       </Helmet>
 
       <Box

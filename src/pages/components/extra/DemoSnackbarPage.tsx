@@ -52,7 +52,7 @@ export default function DemoSnackbarPage() {
   return (
     <>
       <Helmet>
-        <title> Extra Components: Snackbar | NotPump</title>
+        <title> Extra Components: Snackbar | Laicos</title>
       </Helmet>
 
       <Box

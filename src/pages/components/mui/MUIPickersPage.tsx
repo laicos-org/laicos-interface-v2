@@ -30,7 +30,7 @@ export default function MUIPickersPage() {
   return (
     <>
       <Helmet>
-        <title> MUI Components: Pickers | NotPump</title>
+        <title> MUI Components: Pickers | Laicos</title>
       </Helmet>
 
       <Box

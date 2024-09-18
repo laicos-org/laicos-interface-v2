@@ -17,7 +17,7 @@ export default function UserCreatePage() {
   return (
     <>
       <Helmet>
-        <title> User: Create a new user | NotPump</title>
+        <title> User: Create a new user | Laicos</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

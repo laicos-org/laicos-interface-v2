@@ -160,7 +160,7 @@ function Description() {
             repeat: Infinity,
           }}
         >
-          Notpump
+          Laicos
         </StyledGradientText>
       </m.div>
 
@@ -200,7 +200,7 @@ function Description() {
               sx={{ textDecoration: 'underline', display: 'inline-flex', alignItems: 'center' }}
             >
               <Iconify icon="eva:external-link-fill" width={16} sx={{ mr: 0.5 }} />
-              Notpump Github
+              Laicos Github
             </Link>
           </Stack>
 

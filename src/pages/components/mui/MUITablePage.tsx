@@ -17,7 +17,7 @@ export default function MUITablePage() {
   return (
     <>
       <Helmet>
-        <title> MUI Components: Table | NotPump</title>
+        <title> MUI Components: Table | Laicos</title>
       </Helmet>
 
       <Box

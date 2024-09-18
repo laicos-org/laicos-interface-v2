@@ -81,7 +81,7 @@ export default function DemoUploadPage() {
   return (
     <>
       <Helmet>
-        <title> Extra Components: Upload | NotPump</title>
+        <title> Extra Components: Upload | Laicos</title>
       </Helmet>
 
       <Box

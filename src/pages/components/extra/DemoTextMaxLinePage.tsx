@@ -14,7 +14,7 @@ export default function DemoTextMaxLinePage() {
   return (
     <>
       <Helmet>
-        <title> Extra Components: Text Max Line | NotPump</title>
+        <title> Extra Components: Text Max Line | Laicos</title>
       </Helmet>
 
       <Box

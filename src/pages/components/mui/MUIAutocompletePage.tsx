@@ -33,7 +33,7 @@ export default function MUIAutocompletePage() {
   return (
     <>
       <Helmet>
-        <title> MUI Components: Autocomplete | NotPump</title>
+        <title> MUI Components: Autocomplete | Laicos</title>
       </Helmet>
 
       <Box

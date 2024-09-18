@@ -46,7 +46,7 @@ export default function MUIPaginationPage() {
   return (
     <>
       <Helmet>
-        <title> MUI Components: Pagination | NotPump</title>
+        <title> MUI Components: Pagination | Laicos</title>
       </Helmet>
 
       <Box

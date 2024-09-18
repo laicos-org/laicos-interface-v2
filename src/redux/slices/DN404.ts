@@ -8,6 +8,7 @@ import axios from '../../utils/axios';
 import { IDN404MetaDataState, ICheckoutCartItem } from '../../@types/DN404';
 // import DN404Inprogress from "../../DN404.list.json"
 import DN404Medias from "../../DN404.media.json"
+import DN404MediasPost from "../../DN404.media.post.json"
 import DN404Lists from "../../DN404.list.json"
 // ----------------------------------------------------------------------
 
@@ -203,7 +204,7 @@ export function getProducts() {
       const _products = response.data.products
       // eslint-disable-next-line array-callback-return
       _products.map((p:any,_:number) => {
-        _products[_].images = [randomInArray(DN404Medias),randomInArray(DN404Medias),randomInArray(DN404Medias),randomInArray(DN404Medias),randomInArray(DN404Medias),randomInArray(DN404Medias)]
+        _products[_].images = [randomInArray(DN404MediasPost),randomInArray(DN404MediasPost),randomInArray(DN404MediasPost),randomInArray(DN404MediasPost),randomInArray(DN404MediasPost),randomInArray(DN404MediasPost)]
         _products[_].coverUrl = randomInArray(DN404Medias)
       })
       console.log(_products)

@@ -23,7 +23,7 @@ import {
 } from '@mui/material';
 // @types
 import { useLocales } from 'src/locales';
-import { NOTPUMP_DEFINE_FAIRLAUNCH } from 'src/descriptions/DN404';
+import { LAICOS_DEFINE_FAIRLAUNCH } from 'src/descriptions/DN404';
 import { ColorPreview } from 'src/components/color-utils';
 import { randomInArray } from 'src/_mock';
 import { AppWidgetSummary } from 'src/sections/@dashboard/general/app';

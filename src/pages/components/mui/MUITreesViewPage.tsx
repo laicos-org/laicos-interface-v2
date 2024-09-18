@@ -38,7 +38,7 @@ export default function MUITreesViewPage() {
   return (
     <>
       <Helmet>
-        <title> MUI Components: Tree View | NotPump</title>
+        <title> MUI Components: Tree View | Laicos</title>
       </Helmet>
 
       <Box

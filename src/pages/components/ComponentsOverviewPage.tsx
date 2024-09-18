@@ -12,7 +12,7 @@ export default function ComponentsOverviewPage() {
   return (
     <>
       <Helmet>
-        <title> Components Overview | NotPump</title>
+        <title> Components Overview | Laicos</title>
       </Helmet>
 
       <ComponentHero />

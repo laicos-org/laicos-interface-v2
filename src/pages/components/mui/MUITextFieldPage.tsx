@@ -26,7 +26,7 @@ export default function MUITextFieldPage() {
   return (
     <>
       <Helmet>
-        <title> MUI Components: Textfield | NotPump</title>
+        <title> MUI Components: Textfield | Laicos</title>
       </Helmet>
 
       <Box

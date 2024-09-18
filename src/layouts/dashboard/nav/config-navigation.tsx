@@ -43,14 +43,9 @@ const navConfig = [
     subheader: 'general',
     items: [
       {
-        title: 'Analytics',
-        path: PATH_DASHBOARD.general.app,
-        icon: ICONS.analytics,
-      },
-      {
         title: 'Home',
         path: PATH_DASHBOARD.general.home,
-        icon: ICONS.analytics,
+        icon: ICONS.label,
       },
       // { title: 'ecommerce', path: PATH_DASHBOARD.general.ecommerce, icon: ICONS.ecommerce },
       // { title: 'analytics', path: PATH_DASHBOARD.general.analytics, icon: ICONS.analytics },
@@ -73,34 +68,42 @@ const navConfig = [
     items: [
       
       // USER
-      { title: 'Profiles', icon: ICONS.user, path: PATH_DASHBOARD.user.profile },
       {
-        title: 'Top DN404',
+        title: 'Fairlaunch',
         path: PATH_DASHBOARD.dn404.root,
         icon: ICONS.menuItem,
-        caption: 'NotPump use DN404 as a main token - is an implementation of a co-joined ERC20 and ERC721 pair.',
+        caption: 'Laicos use DN404 as a main token - is an implementation of a co-joined ERC20 and ERC721 pair.',
       },
       // INVOICE
 
       // BLOG
-      { title: 'Create DN404', icon: ICONS.label, path: PATH_DASHBOARD.createDn404.create, caption: DN404_DEFINE},
-      {
-        title: 'Docs',
-        path: 'https://notpump.gitbook.io/docs',
-        icon: ICONS.external,
-      },
+      // { title: 'Create DN404', icon: ICONS.label, path: PATH_DASHBOARD.createDn404.create, caption: DN404_DEFINE},
+     
+      
 
       // {
-      //   title: 'Design',
+      //   title: 'More',
       //   path: PATH_DASHBOARD.invoice.root,
-      //   icon: ICONS.invoice,
+      //   icon: ICONS.folder,
       //   children: [
-      //     { title: 'tx history', path: PATH_DASHBOARD.invoice.list },
-      //     { title: 'Layout for fairlaunch descriptions', path: PATH_DASHBOARD.invoice.demoView },
+         
+      //     // { title: 'tx history', path: PATH_DASHBOARD.invoice.list },
+      //     // { title: 'Layout for fairlaunch descriptions', path: PATH_DASHBOARD.invoice.demoView },
       //     // { title: 'create', path: PATH_DASHBOARD.invoice.new },
       //     // { title: 'edit', path: PATH_DASHBOARD.invoice.demoEdit },
       //   ],
       // },
+      {
+        title: 'Analytics',
+        path: PATH_DASHBOARD.general.app,
+        icon: ICONS.analytics,
+      },
+      { title: 'Profiles', icon: ICONS.user, path: PATH_DASHBOARD.user.profile },
+      {
+        title: 'Docs',
+        path: 'https://Laicos.gitbook.io/docs',
+        icon: ICONS.external,
+      },
 
       // {
       //   title: 'user',

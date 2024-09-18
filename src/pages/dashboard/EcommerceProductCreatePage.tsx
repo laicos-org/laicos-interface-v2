@@ -17,7 +17,7 @@ export default function EcommerceProductCreatePage() {
   return (
     <>
       <Helmet>
-        <title> Ecommerce: Create a new product | NotPump</title>
+        <title> Ecommerce: Create a new product | Laicos</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>

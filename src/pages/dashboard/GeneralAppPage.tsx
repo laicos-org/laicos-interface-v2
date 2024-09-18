@@ -44,7 +44,7 @@ export default function GeneralAppPage() {
   return (
     <>
       <Helmet>
-        <title> General: App | NotPump</title>
+        <title> General: App | Laicos</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'xl'}>

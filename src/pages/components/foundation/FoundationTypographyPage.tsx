@@ -48,7 +48,7 @@ export default function FoundationTypographyPage() {
   return (
     <>
       <Helmet>
-        <title> Foundations: Typography | NotPump</title>
+        <title> Foundations: Typography | Laicos</title>
       </Helmet>
 
       <Box

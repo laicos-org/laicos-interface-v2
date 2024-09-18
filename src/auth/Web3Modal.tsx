@@ -14,7 +14,7 @@ const projectId = '1b8cb001b40b05553cf672a57ab66f8b'
 
 // 2. Create wagmiConfig
 const metadata = {
-  name: 'NotPump',
+  name: 'Laicos',
   description: 'AppKit Example',
   url: 'https://web3modal.com', // origin must match your domain & subdomain
   icons: ['https://avatars.githubusercontent.com/u/37784886']

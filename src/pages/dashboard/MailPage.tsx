@@ -8,7 +8,7 @@ export default function MailPage() {
   return (
     <>
       <Helmet>
-        <title> Mail | NotPump</title>
+        <title> Mail | Laicos</title>
       </Helmet>
 
       <Mail />

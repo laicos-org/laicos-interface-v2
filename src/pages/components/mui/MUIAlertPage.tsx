@@ -20,7 +20,7 @@ export default function MUIAlertPage() {
   return (
     <>
       <Helmet>
-        <title> MUI Components: Alert | NotPump</title>
+        <title> MUI Components: Alert | Laicos</title>
       </Helmet>
 
       <Box

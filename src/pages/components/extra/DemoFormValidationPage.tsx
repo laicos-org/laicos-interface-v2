@@ -29,7 +29,7 @@ export default function DemoFormValidationPage() {
   return (
     <>
       <Helmet>
-        <title> Extra Components: Form Validation | NotPump</title>
+        <title> Extra Components: Form Validation | Laicos</title>
       </Helmet>
 
       <Box

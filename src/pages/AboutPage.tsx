@@ -10,7 +10,7 @@ export default function AboutPage() {
   return (
     <>
       <Helmet>
-        <title> About us | NotPump</title>
+        <title> About us | Laicos</title>
       </Helmet>
 
       <AboutHero />
