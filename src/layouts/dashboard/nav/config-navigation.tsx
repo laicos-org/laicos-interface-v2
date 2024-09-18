@@ -69,7 +69,7 @@ const navConfig = [
       
       // USER
       {
-        title: 'Fairlaunch NFTs',
+        title: 'NFTs Fairlaunch',
         path: PATH_DASHBOARD.dn404.root,
         icon: ICONS.menuItem,
         caption: 'Laicos use ERC-721, ERC-1155, DN-404 (an implementation of a co-joined ERC20 and ERC721 pair) as main standard NFTs',

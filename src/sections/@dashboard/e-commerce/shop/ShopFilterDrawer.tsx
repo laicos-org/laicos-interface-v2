@@ -28,16 +28,15 @@ import { RHFMultiCheckbox, RHFRadioGroup, RHFSlider } from '../../../../componen
 // ----------------------------------------------------------------------
 
 export const FILTER_GENDER_OPTIONS = [
-  { label: 'Men', value: 'Men' },
-  { label: 'Women', value: 'Women' },
-  { label: 'Kids', value: 'Kids' },
+  { label: 'ERC-721', value: 'ERC-721' },
+  { label: 'ERC-1155', value: 'ERC-1155' },
+  { label: 'DN-404', value: 'DN-404' },
 ];
 
 export const FILTER_CATEGORY_OPTIONS = [
-  { label: 'All', value: 'All' },
-  { label: 'Shose', value: 'Shose' },
-  { label: 'Apparel', value: 'Apparel' },
-  { label: 'Accessories', value: 'Accessories' },
+  { label: 'Fullfill', value: 'fullfill'},
+  { label: 'Inprogress', value: "inprogress"},
+  { label: 'Listed', value: 'listed'},
 ];
 
 export const FILTER_RATING_OPTIONS = ['up4Star', 'up3Star', 'up2Star', 'up1Star'];
@@ -176,7 +175,7 @@ export default function ShopFilterDrawer({
               />
             </Stack>
 
-            <Stack spacing={1}>
+            {/* <Stack spacing={1}>
               <Typography variant="subtitle1">Rating</Typography>
 
               <Controller
@@ -213,7 +212,7 @@ export default function ShopFilterDrawer({
                   </RadioGroup>
                 )}
               />
-            </Stack>
+            </Stack> */}
           </Stack>
         </Scrollbar>
 

@@ -27,15 +27,15 @@ import FormProvider, {
 // ----------------------------------------------------------------------
 
 const GENDER_OPTION = [
-  { label: 'Men', value: 'Men' },
-  { label: 'Women', value: 'Women' },
-  { label: 'Kids', value: 'Kids' },
+  { label: 'ERC-721', value: 'ERC-721' },
+  { label: 'ERC-1155', value: 'ERC-1155' },
+  { label: 'DN-404', value: 'DN-404' },
 ];
 
 const CATEGORY_OPTION = [
-  { group: 'Clothing', classify: ['Shirts', 'T-shirts', 'Jeans', 'Leather'] },
-  { group: 'Tailored', classify: ['Suits', 'Blazers', 'Trousers', 'Waistcoats'] },
-  { group: 'Accessories', classify: ['Shoes', 'Backpacks and bags', 'Bracelets', 'Face masks'] },
+  { group: 'Fullfill', classify: ['Shirts', 'T-shirts', 'Jeans', 'Leather'] },
+  { group: 'Inprogress', classify: ['Suits', 'Blazers', 'Trousers', 'Waistcoats'] },
+  { group: 'Listed', classify: ['Shoes', 'Backpacks and bags', 'Bracelets', 'Face masks'] },
 ];
 
 const TAGS_OPTION = [
