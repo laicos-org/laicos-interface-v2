@@ -186,9 +186,9 @@ export default function Router() {
         {
           path: 'nfts',
           children: [
-            { element: <Navigate to="/dashboard/nfts/bonding-curve" replace />, index: true },
-            { path: 'bonding-curve', element: <DN404Fairlaunch /> },
-            { path: 'bonding-curve/:name', element: <DN404DetailsPage /> },
+            { element: <Navigate to="/dashboard/nfts/fairlaunch" replace />, index: true },
+            { path: 'fairlaunch', element: <DN404Fairlaunch /> },
+            { path: 'fairlaunch/:name', element: <DN404DetailsPage /> },
             // { path: 'create', element: <DN404Create/>},
             // { path: 'list', element: <EcommerceProductListPage /> },
             // { path: 'product/new', element: <EcommerceProductCreatePage /> },

@@ -74,11 +74,11 @@ export const PATH_DASHBOARD = {
   },
   dn404: {
     root: path(ROOTS_DASHBOARD, '/nfts'),
-    bondingCurve: path(ROOTS_DASHBOARD, '/nfts/bonding-curve'),
+    bondingCurve: path(ROOTS_DASHBOARD, '/nfts/fairlaunch'),
     list: path(ROOTS_DASHBOARD, '/e-commerce/list'),
     checkout: path(ROOTS_DASHBOARD, '/e-commerce/checkout'),
     new: path(ROOTS_DASHBOARD, '/e-commerce/product/new'),
-    view: (name: string) => path(ROOTS_DASHBOARD, `/nfts/bonding-curve/${name}`),
+    view: (name: string) => path(ROOTS_DASHBOARD, `/nfts/fairlaunch/${name}`),
     edit: (name: string) => path(ROOTS_DASHBOARD, `/e-commerce/product/${name}/edit`),
     demoEdit: path(ROOTS_DASHBOARD, '/e-commerce/product/nike-blazer-low-77-vintage/edit'),
     demoView: path(ROOTS_DASHBOARD, '/e-commerce/product/nike-air-force-1-ndestrukt'),
