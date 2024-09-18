@@ -88,7 +88,7 @@ export default function DN404HomePage() {
           >
             <Stack spacing={3}>
               <ProfilePostInput />
-              <DN404List products={products} loading={!products.length} />
+              {/* <DN404List products={products} loading={!products.length} /> */}
               {_userFeeds.map((post) => (
                 <ProfilePostCard key={post.id} post={post} />
               ))}

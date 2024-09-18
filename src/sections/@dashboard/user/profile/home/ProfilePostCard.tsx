@@ -81,11 +81,11 @@ export default function ProfilePostCard({ post }: Props) {
       <CardHeader
         disableTypography
         avatar={
-          <CustomAvatar src={user?.photoURL} alt={user?.displayName} name={user?.displayName} />
+          <CustomAvatar src={post.author?.avatarUrl} alt={post.author?.name} name={post.author?.name} />
         }
         title={
           <Link color="inherit" variant="subtitle2">
-            {user?.displayName}
+            {post.author?.name}
           </Link>
         }
         subheader={

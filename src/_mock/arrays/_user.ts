@@ -1,12 +1,14 @@
 import _mock from '../_mock';
 import { randomNumberRange, randomInArray } from '../utils';
 import DN404Medias from "../../DN404.media.json"
+import DN404MediasPost from "../../DN404.media.post.json"
 // ----------------------------------------------------------------------
 
 export const _userAbout = {
   id: _mock.id(1),
-  cover: _mock.image.cover(1),
-  role: 'UI Designer',
+  cover: randomInArray(DN404Medias),
+  avatar:  randomInArray(DN404Medias),
+  role: 'Product Manager',
   follower: randomNumberRange(999, 99999),
   following: randomNumberRange(999, 99999),
   quote:
@@ -16,10 +18,10 @@ export const _userAbout = {
   company: _mock.company(1),
   school: _mock.company(2),
   socialLinks: {
-    facebookLink: `https://www.facebook.com/caitlyn.kerluke`,
-    instagramLink: `https://www.instagram.com/caitlyn.kerluke`,
-    linkedinLink: `https://www.linkedin.com/in/caitlyn.kerluke`,
-    twitterLink: `https://www.twitter.com/caitlyn.kerluke`,
+    facebookLink: `https://www.facebook.com/vincent`,
+    instagramLink: `https://www.instagram.com/vincent`,
+    linkedinLink: `https://www.linkedin.com/in/vincent`,
+    twitterLink: `https://www.twitter.com/vincent`,
   },
 };
 
@@ -45,7 +47,7 @@ export const _userGallery = [...Array(12)].map((_, index) => ({
   imageUrl: _mock.image.cover(index),
 }));
 
-export const _userFeeds = [...Array(3)].map((_, index) => ({
+export const _userFeeds = [...Array(20)].map((_, index) => ({
   id: _mock.id(index),
   author: {
     id: _mock.id(8),
@@ -54,9 +56,9 @@ export const _userFeeds = [...Array(3)].map((_, index) => ({
   },
   isLiked: true,
   createdAt: _mock.time(index),
-  media: _mock.image.cover(index),
+  media: randomInArray(DN404MediasPost),
   message: _mock.text.sentence(index),
-  personLikes: [...Array(36)].map((__, personIndex) => ({
+  personLikes: [...Array(Math.floor(Math.random() * 20 + 40))].map((__, personIndex) => ({
     name: _mock.name.fullName(personIndex),
     avatarUrl: randomInArray(DN404Medias),
   })),
