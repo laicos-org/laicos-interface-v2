@@ -6,8 +6,17 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, Card, Chip, Fab, IconButton, Stack, Typography } from '@mui/material';
 // components
 import { useForm } from 'react-hook-form';
-import FormProvider, { RHFEditor, RHFSwitch, RHFUpload } from 'src/components/hook-form';
-import { FormValuesProps } from 'src/sections/@dashboard/blog/BlogNewPostForm';
+import FormProvider, {
+  RHFAutocomplete,
+  RHFEditor,
+  RHFSwitch,
+  RHFUpload,
+} from 'src/components/hook-form';
+import {
+  FormValuesProps,
+  NFTS_OPTIONS,
+  TAGS_OPTION,
+} from 'src/sections/@dashboard/blog/BlogNewPostForm';
 import Iconify from '../../../../../components/iconify';
 
 // ----------------------------------------------------------------------
@@ -16,13 +25,14 @@ export default function ProfilePostInput() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleClickAttach = () => {
+    setOpenWrite(true);
     fileInputRef.current?.click();
   };
   const NewBlogSchema = Yup.object().shape({
     title: Yup.string().required('Title is required'),
     description: Yup.string().required('Description is required'),
     tags: Yup.array().min(2, 'Must have at least 2 tags'),
-    metaKeywords: Yup.array().min(1, 'Meta keywords is required'),
+    metaKeywords: Yup.array().min(0, 'NFTs type is required'),
     cover: Yup.mixed().required('Cover is required').nullable(true),
     content: Yup.string(),
   });
@@ -36,7 +46,7 @@ export default function ProfilePostInput() {
     comments: true,
     metaTitle: '',
     metaDescription: '',
-    metaKeywords: [],
+    metaKeywords: ['ERC-721'],
   };
 
   const methods = useForm<FormValuesProps>({
@@ -99,7 +109,9 @@ export default function ProfilePostInput() {
           pb={0}
           sx={{
             transition: '0.4s',
-            ...(!openMedia ? { opacity: '0', height: 0 } : { opacity: '1', height: 'auto', paddingBottom: 1 }),
+            ...(!openMedia
+              ? { opacity: '0', height: 0 }
+              : { opacity: '1', height: 'auto', paddingBottom: 1 }),
           }}
         >
           <RHFUpload
@@ -142,22 +154,47 @@ export default function ProfilePostInput() {
             labelPlacement="start"
             sx={{ mx: 0, width: 1, justifyContent: 'space-between' }}
           />
+          <RHFAutocomplete
+            sx={{ pt: 1 }}
+            name="metaKeywords"
+            label="NFT type"
+            multiple
+            freeSolo
+            defaultValue={['ERC-721']}
+            options={NFTS_OPTIONS.map((option) => option)}
+            ChipProps={{ size: 'small' }}
+          />
         </Stack>
 
         <Stack
           direction="row"
           alignItems="center"
           justifyContent="space-between"
-          onFocus={() => setOpenWrite(true)}
+          // onFocus={() => setOpenWrite(true)}
         >
           <Stack direction="row" spacing={1} alignItems="left" justifyContent="space-between">
-            <IconButton color="primary" onClick={() => setOpenOptions(!openOptions)}>
+            <IconButton
+              color="primary"
+              onClick={() => {
+                setOpenOptions(!openOptions);
+                setOpenWrite(true);
+              }}
+            >
               <Iconify icon="eva:options-2-fill" width={24} />
             </IconButton>
-            <IconButton color="success" onClick={() => setOpenMedia(!openMedia)}>
+            <IconButton
+              color="success"
+              onClick={() => {
+                setOpenMedia(!openMedia);
+                setOpenWrite(true);
+              }}
+            >
               <Iconify icon="eva:image-2-fill" width={24} />
             </IconButton>
-            <IconButton color="info" onClick={() => setOpenMedia(!openMedia)}>
+            <IconButton color="info"   onClick={() => {
+                setOpenMedia(!openMedia);
+                setOpenWrite(true);
+              }}>
               <Iconify icon="eva:video-fill" width={24} />
             </IconButton>
             <IconButton color="warning" onClick={handleClickAttach}>
@@ -172,9 +209,10 @@ export default function ProfilePostInput() {
             variant="soft"
             onClick={() => {
               reset();
+              setOpenWrite(!openWrite);
             }}
           >
-            <Iconify icon="eva:edit-2-outline" pr={0.5} width={24} /> Post
+            <Iconify icon="eva:flash-fill" pr={0.5} width={24} /> Post
           </Button>
         </Stack>
 

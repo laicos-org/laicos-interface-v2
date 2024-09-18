@@ -25,7 +25,7 @@ import BlogNewPostPreview from './BlogNewPostPreview';
 
 // ----------------------------------------------------------------------
 
-const TAGS_OPTION = [
+export const TAGS_OPTION = [
   'Toy Story 3',
   'Logan',
   'Full Metal Jacket',
@@ -39,6 +39,13 @@ const TAGS_OPTION = [
   'Inglourious Basterds',
   'Snatch',
   '3 Idiots',
+];
+
+
+export const NFTS_OPTIONS = [
+  "ERC-721",
+  "ERC-1155",
+  "DN-404"
 ];
 
 // ----------------------------------------------------------------------
