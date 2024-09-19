@@ -61,7 +61,7 @@ const navConfig = [
   {
     title: 'Github & docs',
     icon: <Iconify icon="eva:book-open-fill" />,
-    path: 'https://Laicos.gitbook.io/docs',
+    path: 'https://laicos.gitbook.io/laicos',
   },
 ];
 

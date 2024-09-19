@@ -211,7 +211,7 @@ function Description() {
             startIcon={<Iconify icon="eva:external-link-fill" width={24} />}
             target="_blank"
             rel="noopener"
-            href="https://github.com/laicos-org/dn404"
+            href="https://laicos.gitbook.io/laicos"
             sx={{ borderColor: 'text.primary' }}
           >
             Docs
