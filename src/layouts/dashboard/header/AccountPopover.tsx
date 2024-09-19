@@ -13,6 +13,8 @@ import { useWalletInfo, useWeb3Modal, useWeb3ModalEvents, useWeb3ModalState } fr
 import Iconify from 'src/components/iconify';
 import {useWalletClient} from 'wagmi';
 import useResponsive from 'src/hooks/useResponsive';
+import Web3AptosButton from 'src/auth/Web3AptosModalButton';
+import { WalletConnector as AptosWalletConnector } from "@aptos-labs/wallet-adapter-mui-design";
 import { PATH_DASHBOARD, PATH_AUTH } from '../../../routes/paths';
 // auth
 import { useAuthContext } from '../../../auth/useAuthContext';
@@ -54,6 +56,7 @@ export default function AccountPopover() {
   const handleOpenPopover = (event: React.MouseEvent<HTMLElement>) => {
     setOpenPopover(event.currentTarget);
   };
+
 
   const handleClosePopover = () => {
     setOpenPopover(null);
@@ -132,6 +135,7 @@ export default function AccountPopover() {
         
         {/* <Web3ModalNetworkButton /> */}
         <Web3ModalWalletButton />
+        <AptosWalletConnector/>
       </Stack>
       {/* <IconButtonAnimate
         onClick={handleOpenPopover}

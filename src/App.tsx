@@ -50,6 +50,7 @@ import { ThemeSettings, SettingsProvider } from './components/settings';
 
 import { AuthProvider } from './auth/JwtContext';
 import { Web3ModalProvider } from './auth/Web3Modal';
+import {Web3AptosWalletProvider} from './auth/Web3AptosModal';
 // import { AuthProvider } from './auth/Auth0Context';
 // import { AuthProvider } from './auth/FirebaseContext';
 // import { AuthProvider } from './auth/AwsCognitoContext';
@@ -58,6 +59,7 @@ import { Web3ModalProvider } from './auth/Web3Modal';
 
 export default function App() {
   return (
+    <Web3AptosWalletProvider>
     <Web3ModalProvider>
       <AuthProvider>
         <HelmetProvider>
@@ -87,5 +89,6 @@ export default function App() {
         </HelmetProvider>
       </AuthProvider>
     </Web3ModalProvider>
+    </Web3AptosWalletProvider>
   );
 }
