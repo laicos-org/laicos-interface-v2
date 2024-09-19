@@ -101,7 +101,7 @@ const navConfig = [
       { title: 'Profiles', icon: ICONS.user, path: PATH_DASHBOARD.user.profile },
       {
         title: 'Docs',
-        path: 'https://Laicos.gitbook.io/docs',
+        path: 'https://laicos.gitbook.io/laicos',
         icon: ICONS.external,
       },
 
