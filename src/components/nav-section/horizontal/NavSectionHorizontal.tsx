@@ -2,6 +2,8 @@ import { memo } from 'react';
 // @mui
 import { Stack } from '@mui/material';
 // utils
+import {PATH_DASHBOARD} from 'src/routes/paths';
+import {useWalletClient} from 'wagmi';
 import { hideScrollbarY } from '../../../utils/cssStyles';
 //
 import { NavSectionProps, NavListProps } from '../types';
@@ -37,11 +39,16 @@ type ItemsProps = {
 };
 
 function Items({ items }: ItemsProps) {
+  const wallet = useWalletClient()
   return (
     <>
-      {items.map((list) => (
-        <NavList key={list.title + list.path} data={list} depth={1} hasChild={!!list.children} />
-      ))}
+      {items.map((list) => {
+        if (list.path === PATH_DASHBOARD.user.profile && !wallet?.data?.account?.address)
+          return <div />;
+        return (
+          <NavList key={list.title + list.path} data={list} depth={1} hasChild={!!list.children} />
+        );
+      })}
     </>
   );
 }
