@@ -45,7 +45,7 @@ const Logo = forwardRef<HTMLDivElement, LogoProps>(
         }}
         {...other}
       >
-        <img style={{ borderRadius: '10px' }} src="/favicon/favicon-32x32.png" alt="logo" />
+        <img style={{ borderRadius: '10px' }} src="/favicon/favicon.svg" alt="logo" />
       </Box>
     );
 
