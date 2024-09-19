@@ -9,12 +9,18 @@ import { WALLET } from 'src/descriptions/DN404';
 import { formatAddress } from 'src/utils/formatAddress';
 import { fCurrency } from 'src/utils/formatNumber';
 import { Web3ModalNetworkButton, Web3ModalWalletButton } from 'src/auth/Web3ModalButtons';
-import { useWalletInfo, useWeb3Modal, useWeb3ModalEvents, useWeb3ModalState } from '@web3modal/wagmi/react';
+import {
+  useWalletInfo,
+  useWeb3Modal,
+  useWeb3ModalEvents,
+  useWeb3ModalState,
+} from '@web3modal/wagmi/react';
 import Iconify from 'src/components/iconify';
-import {useWalletClient} from 'wagmi';
+import { useWalletClient } from 'wagmi';
 import useResponsive from 'src/hooks/useResponsive';
 import Web3AptosButton from 'src/auth/Web3AptosModalButton';
-import { WalletConnector as AptosWalletConnector } from "@aptos-labs/wallet-adapter-mui-design";
+import { WalletConnector as AptosWalletConnector } from '@aptos-labs/wallet-adapter-mui-design';
+import { useWallet } from '@aptos-labs/wallet-adapter-react';
 import { PATH_DASHBOARD, PATH_AUTH } from '../../../routes/paths';
 // auth
 import { useAuthContext } from '../../../auth/useAuthContext';
@@ -29,7 +35,7 @@ import DN404Medias from '../../../DN404.media.json';
 const OPTIONS = [
   {
     label: 'Home',
-    linkTo: '/dashboard/app',
+    linkTo: '/dashboard/home',
   },
   // {
   //   label: 'Profile',
@@ -37,7 +43,7 @@ const OPTIONS = [
   // },
   {
     label: 'Settings',
-    linkTo: PATH_DASHBOARD.user.account,
+    linkTo: '/dashboard/user/profile'
   },
 ];
 
@@ -57,20 +63,8 @@ export default function AccountPopover() {
     setOpenPopover(event.currentTarget);
   };
 
-
   const handleClosePopover = () => {
     setOpenPopover(null);
-  };
-
-  const handleLogout = async () => {
-    try {
-      logout();
-      navigate(PATH_AUTH.login, { replace: true });
-      handleClosePopover();
-    } catch (error) {
-      console.error(error);
-      enqueueSnackbar('Unable to logout!', { variant: 'error' });
-    }
   };
 
   const handleClickItem = (path: string) => {
@@ -86,7 +80,18 @@ export default function AccountPopover() {
   //   web3Modal.open()
   // },[web3Event,web3Modal])
   const web3Modal = useWeb3Modal();
-  const wallet = useWalletClient()
+  const wallet = useWalletClient();
+  const _wallet = useWallet();
+  const handleLogout = async () => {
+    try {
+      _wallet.disconnect();
+      navigate(PATH_AUTH.login, { replace: true });
+      handleClosePopover();
+    } catch (error) {
+      console.error(error);
+      enqueueSnackbar('Unable to logout!', { variant: 'error' });
+    }
+  };
   return (
     <>
       {/* <Typography variant="subtitle2" noWrap sx={{ display:'flex'}}>
@@ -100,67 +105,101 @@ export default function AccountPopover() {
             mx: 'auto',
           }}
         />
-        <Stack>
-          {  wallet.data?.account?.address ? 
-          <Tooltip title={`${'Buy crypto via 1Inch on ramp'}`} arrow>
+        {/* <Stack>
+          {wallet.data?.account?.address ? (
+            <Tooltip title={`${'Buy crypto via 1Inch on ramp'}`} arrow>
               <Button
-                color='inherit'
-                sx={{color: 'text.disabled'}}
-                onClick={() => {web3Modal.open({view: 'Account'})}}
+                color="inherit"
+                sx={{ color: 'text.disabled' }}
+                onClick={() => {
+                  web3Modal.open({ view: 'Account' });
+                }}
                 variant="outlined"
-                startIcon={<Avatar sx={{width: 18, height: 18}} src='https://cdn.1inch.io/logo.png'/>}
+                startIcon={
+                  <Avatar sx={{ width: 18, height: 18 }} src="https://cdn.1inch.io/logo.png" />
+                }
                 endIcon={<Iconify icon="eva:info-outline" color="gray" width={16} />}
               >
                 {' '}
-                {isDesktop ? 'Swap'  : ''}
+                {isDesktop ? 'Swap' : ''}
               </Button>
-          </Tooltip>
-          : ''}
-        </Stack>
+            </Tooltip>
+          ) : (
+            ''
+          )}
+        </Stack> */}
         <Stack>
           <Tooltip title={`${'Buy crypto via Coinbase on ramp'}`} arrow>
-              <Button
-                color='inherit'
-                sx={{color: 'text.disabled'}}
-                onClick={() => {web3Modal.open({view: 'OnRampProviders'})}}
-                variant="outlined"
-                startIcon={<Avatar sx={{width: 18, height: 18}} src='https://icoholder.com/media/cache/ico_logo_view_page/files/img/3f90198db433d70d4b80933214def548.png'/>}
-                endIcon={<Iconify icon="eva:info-outline" color="gray" width={16} />}
-              >
-                {' '}
-                {isDesktop ? 'Buy crypto'  : ''}
-              </Button>
+            <Button
+              color="inherit"
+              sx={{ color: 'text.disabled' }}
+              onClick={() => {
+                web3Modal.open({ view: 'OnRampProviders' });
+              }}
+              variant="outlined"
+              startIcon={
+                <Avatar
+                  sx={{ width: 18, height: 18 }}
+                  src="https://icoholder.com/media/cache/ico_logo_view_page/files/img/3f90198db433d70d4b80933214def548.png"
+                />
+              }
+              endIcon={<Iconify icon="eva:info-outline" color="gray" width={16} />}
+            >
+              {' '}
+              {isDesktop ? 'Buy crypto' : ''}
+            </Button>
           </Tooltip>
         </Stack>
-        
-        {/* <Web3ModalNetworkButton /> */}
-        <Web3ModalWalletButton />
-        <AptosWalletConnector/>
-      </Stack>
-      {/* <IconButtonAnimate
-        onClick={handleOpenPopover}
-        sx={{
-          p: 0,
-          ...(openPopover && {
-            '&:before': {
-              zIndex: 1,
-              content: "''",
-              width: '100%',
-              height: '100%',
-              borderRadius: '50%',
-              position: 'absolute',
-              bgcolor: (theme) => alpha(theme.palette.grey[900], 0.8),
-            },
-          }),
-        }}
-      >
-        <CustomAvatar src={user?.photoURL || avatar} alt={user?.displayName} name={user?.displayName} />
-      </IconButtonAnimate> */}
 
-      {/* <MenuPopover open={openPopover} onClose={handleClosePopover} sx={{ width: 200, p: 0 }}>
+        {/* <Web3ModalNetworkButton /> */}
+        {_wallet.account?.address ? (
+          <Stack>
+            {/* <Button variant='soft'>{formatAddress(_wallet.account?.address)}</Button> */}
+
+            <Button
+              onClick={handleOpenPopover}
+              sx={{
+                p: 0,
+                ...(openPopover && {
+                  '&:before': {
+                    zIndex: 1,
+                    content: "''",
+                    width: '100%',
+                    background: 'none',
+                    height: '100%',
+                    // borderRadius: '50%',
+                    position: 'absolute',
+                    bgcolor: (theme) => alpha(theme.palette.grey[900], 0.8),
+                  },
+                }),
+              }}
+            >
+              <Button variant="soft">
+                {formatAddress(_wallet.account?.address)}{' '}
+                <CustomAvatar
+                  src={user?.photoURL || avatar}
+                  alt={user?.displayName}
+                  sx={{ width: '32px', height: '32px', ml: 1 }}
+                  name={user?.displayName}
+                />
+              </Button>
+            </Button>
+          </Stack>
+        ) : (
+          <Stack fontSize="10px">
+            <Button variant="soft" startIcon={<Iconify icon="eva:clipboard-fill" />}
+            >Wallet Connect</Button>
+            <Stack sx={{ opacity: '0', position: 'absolute' }}>
+              <AptosWalletConnector />
+            </Stack>
+          </Stack>
+        )}
+      </Stack>
+
+      <MenuPopover open={openPopover} onClose={handleClosePopover} sx={{ width: 200, p: 0 }}>
         <Box sx={{ my: 1.5, px: 2.5 }}>
           <Typography variant="subtitle2" noWrap>
-            {user?.displayName || formatAddress(WALLET)}
+            {formatAddress(_wallet.account?.address)}
           </Typography>
 
           <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
@@ -181,9 +220,9 @@ export default function AccountPopover() {
         <Divider sx={{ borderStyle: 'dashed' }} />
 
         <MenuItem onClick={handleLogout} sx={{ m: 1 }}>
-          Logout
+          Disconnect
         </MenuItem>
-      </MenuPopover> */}
+      </MenuPopover>
     </>
   );
 }
