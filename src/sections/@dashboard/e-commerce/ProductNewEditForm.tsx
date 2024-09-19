@@ -27,8 +27,8 @@ import FormProvider, {
 // ----------------------------------------------------------------------
 
 const GENDER_OPTION = [
-  { label: 'ERC-721', value: 'ERC-721' },
-  { label: 'ERC-1155', value: 'ERC-1155' },
+  { label: 'EIP-721', value: 'EIP-721' },
+  { label: 'EIP-1155', value: 'EIP-1155' },
   { label: 'DN-404', value: 'DN-404' },
 ];
 

@@ -43,8 +43,8 @@ export const TAGS_OPTION = [
 
 
 export const NFTS_OPTIONS = [
-  "ERC-721",
-  "ERC-1155",
+  "EIP-721",
+  "EIP-1155",
   "DN-404"
 ];
 

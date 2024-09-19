@@ -46,7 +46,7 @@ export default function ProfilePostInput() {
     comments: true,
     metaTitle: '',
     metaDescription: '',
-    metaKeywords: ['ERC-721'],
+    metaKeywords: ['EIP-721'],
   };
 
   const methods = useForm<FormValuesProps>({
@@ -160,7 +160,7 @@ export default function ProfilePostInput() {
             label="NFT type"
             multiple
             freeSolo
-            defaultValue={['ERC-721']}
+            defaultValue={['EIP-721']}
             options={NFTS_OPTIONS.map((option) => option)}
             ChipProps={{ size: 'small' }}
           />
