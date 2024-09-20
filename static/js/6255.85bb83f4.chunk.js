@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunk_minimal_material_kit_react=self.webpackChunk_minimal_material_kit_react||[]).push([[6255],{36255:function(e,t,a){a.r(t),a.d(t,{default:function(){return h}});var i=a(6907),n=a(476),r=a(4565),l=a(15398),c=a(80184);function h(){var e=(0,l.K$)().themeStretch;return(0,c.jsxs)(c.Fragment,{children:[(0,c.jsx)(i.ql,{children:(0,c.jsx)("title",{children:" Blank Page | Laicos"})}),(0,c.jsx)(n.Z,{maxWidth:!e&&"xl",children:(0,c.jsx)(r.Z,{variant:"h6",children:" Blank "})})]})}}}]);
+//# sourceMappingURL=6255.85bb83f4.chunk.js.map
