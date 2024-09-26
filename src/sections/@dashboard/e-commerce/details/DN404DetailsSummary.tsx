@@ -379,7 +379,7 @@ export default function DN404DetailsSummary({
               />
             </Stack>
           </Stack>
-          <Grid container spacing={2} sx={{pt:2}}>
+          <Grid container spacing={2} sx={{ pt: 2 }}>
             <Grid item xs={12} md={6}>
               <AppWidgetSummary
                 title="Bullish pool"

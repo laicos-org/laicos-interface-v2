@@ -191,10 +191,13 @@ export default function ProfilePostInput() {
             >
               <Iconify icon="eva:image-2-fill" width={24} />
             </IconButton>
-            <IconButton color="info"   onClick={() => {
+            <IconButton
+              color="info"
+              onClick={() => {
                 setOpenMedia(!openMedia);
                 setOpenWrite(true);
-              }}>
+              }}
+            >
               <Iconify icon="eva:video-fill" width={24} />
             </IconButton>
             <IconButton color="warning" onClick={handleClickAttach}>

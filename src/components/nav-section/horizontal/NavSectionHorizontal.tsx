@@ -2,9 +2,9 @@ import { memo } from 'react';
 // @mui
 import { Stack } from '@mui/material';
 // utils
-import {PATH_DASHBOARD} from 'src/routes/paths';
-import {useWalletClient} from 'wagmi';
-import {useWallet} from '@aptos-labs/wallet-adapter-react';
+import { PATH_DASHBOARD } from 'src/routes/paths';
+import { useWalletClient } from 'wagmi';
+import { useWallet } from '@aptos-labs/wallet-adapter-react';
 import { hideScrollbarY } from '../../../utils/cssStyles';
 //
 import { NavSectionProps, NavListProps } from '../types';
@@ -40,12 +40,11 @@ type ItemsProps = {
 };
 
 function Items({ items }: ItemsProps) {
-  const wallet = useWallet()
+  const wallet = useWallet();
   return (
     <>
       {items.map((list) => {
-        if (list.path === PATH_DASHBOARD.user.profile && !wallet?.account?.address)
-          return <div />;
+        if (list.path === PATH_DASHBOARD.user.profile && !wallet?.account?.address) return <div />;
         return (
           <NavList key={list.title + list.path} data={list} depth={1} hasChild={!!list.children} />
         );

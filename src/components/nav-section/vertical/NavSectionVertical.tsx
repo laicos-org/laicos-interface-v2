@@ -2,8 +2,8 @@
 import { List, Stack } from '@mui/material';
 // locales
 import { PATH_DASHBOARD } from 'src/routes/paths';
-import {useWalletClient} from 'wagmi';
-import {useWallet} from '@aptos-labs/wallet-adapter-react';
+import { useWalletClient } from 'wagmi';
+import { useWallet } from '@aptos-labs/wallet-adapter-react';
 import { useLocales } from '../../../locales';
 //
 import { NavSectionProps } from '../types';
@@ -14,7 +14,7 @@ import NavList from './NavList';
 
 export default function NavSectionVertical({ data, sx, ...other }: NavSectionProps) {
   const { translate } = useLocales();
-  const wallet = useWallet()
+  const wallet = useWallet();
   return (
     <Stack sx={sx} {...other}>
       {data.map((group) => {
@@ -27,7 +27,8 @@ export default function NavSectionVertical({ data, sx, ...other }: NavSectionPro
             )}
 
             {group.items.map((list) => {
-              if (list.path === PATH_DASHBOARD.user.profile && !wallet?.account?.address) return <div/>
+              if (list.path === PATH_DASHBOARD.user.profile && !wallet?.account?.address)
+                return <div />;
               return (
                 <NavList
                   key={list.title + list.path}

@@ -14,7 +14,6 @@ interface Props extends BoxProps {
   loading: boolean;
 }
 
-
 export default function DN404List({ products, loading, ...other }: Props) {
   return (
     <Box

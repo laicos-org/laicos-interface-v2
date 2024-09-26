@@ -200,7 +200,7 @@ export default function Router() {
           path: 'dn404',
           children: [
             { element: <Navigate to="/dashboard/dn404/create" replace />, index: true },
-            { path: 'create', element: <DN404Create/>},
+            { path: 'create', element: <DN404Create /> },
           ],
         },
         {
@@ -225,7 +225,7 @@ export default function Router() {
             { path: 'new', element: <InvoiceCreatePage /> },
           ],
         },
-      
+
         { path: 'files-manager', element: <FileManagerPage /> },
         {
           path: 'mail',

@@ -2,7 +2,7 @@
 import { styled } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
 // @types
-import {randomInArray} from 'src/_mock';
+import { randomInArray } from 'src/_mock';
 import { IUserProfileCover } from '../../../../@types/user';
 // utils
 import { bgBlur } from '../../../../utils/cssStyles';
@@ -11,7 +11,7 @@ import { useAuthContext } from '../../../../auth/useAuthContext';
 // components
 import Image from '../../../../components/image';
 import { CustomAvatar } from '../../../../components/custom-avatar';
-import avatars from "../../../../DN404.media.json"
+import avatars from '../../../../DN404.media.json';
 // ----------------------------------------------------------------------
 
 const StyledRoot = styled('div')(({ theme }) => ({

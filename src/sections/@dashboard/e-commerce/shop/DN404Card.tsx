@@ -18,7 +18,7 @@ import { formatAddress } from 'src/utils/formatAddress';
 import ProgressLinear from 'src/sections/_examples/mui/progress/ProgressLinear';
 import { color } from '@mui/system';
 import { useLocales } from 'src/locales';
-import {LAICOS_DEFINE_FAIRLAUNCH, WALLET} from 'src/descriptions/DN404';
+import { LAICOS_DEFINE_FAIRLAUNCH, WALLET } from 'src/descriptions/DN404';
 import { PATH_DASHBOARD } from '../../../../routes/paths';
 // utils
 import { fCurrency, fShortenNumber } from '../../../../utils/formatNumber';
@@ -113,7 +113,7 @@ export default function DN404Card({ product }: Props) {
 
         <Image alt={name} src={coverUrl} ratio="1/1" sx={{ borderRadius: 1.5 }} />
       </Box>
-      <Stack spacing={1} sx={{ pl: 1,pr:3, pt: 0}}  direction="row" alignItems="center">
+      <Stack spacing={1} sx={{ pl: 1, pr: 3, pt: 0 }} direction="row" alignItems="center">
         <LinearProgress
           variant="determinate"
           value={Number(Math.random().toFixed(2)) * 100}
@@ -123,14 +123,14 @@ export default function DN404Card({ product }: Props) {
             mr: 0.5,
           }}
         />
-              <Tooltip title={`${translate('abc')}`} arrow>
+        <Tooltip title={`${translate('abc')}`} arrow>
           <Box component="span">
             <Iconify icon="eva:info-outline" color="gray" width={16} />
           </Box>
         </Tooltip>
       </Stack>
 
-      <Stack spacing={1} sx={{ pl: 1, pr:3, pt: 0}} direction="row" alignItems="center">
+      <Stack spacing={1} sx={{ pl: 1, pr: 3, pt: 0 }} direction="row" alignItems="center">
         <LinearProgress
           color="warning"
           variant="determinate"
@@ -141,7 +141,7 @@ export default function DN404Card({ product }: Props) {
             flexGrow: 1,
           }}
         />
-         <Tooltip title={`${translate(LAICOS_DEFINE_FAIRLAUNCH)}`} arrow>
+        <Tooltip title={`${translate(LAICOS_DEFINE_FAIRLAUNCH)}`} arrow>
           <Box component="span">
             <Iconify icon="eva:info-outline" color="gray" width={16} />
           </Box>

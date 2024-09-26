@@ -72,7 +72,7 @@ export default function InvoiceTableRow({
   return (
     <>
       <TableRow hover>
-      <TableCell align="left">{fDate(createDate)}</TableCell>
+        <TableCell align="left">{fDate(createDate)}</TableCell>
 
         <TableCell>
           <Stack direction="row" alignItems="center" spacing={2}>

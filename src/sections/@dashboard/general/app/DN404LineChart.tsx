@@ -11,7 +11,7 @@ import Chart, { useChart } from '../../../../components/chart';
 interface Props extends CardProps {
   title?: string;
   subheader?: string;
-  height?:number;
+  height?: number;
   chart: {
     categories?: string[];
     colors?: string[];
@@ -40,11 +40,11 @@ export default function DN404LineChart({ title, subheader, chart, height, ...oth
   });
 
   return (
-    <Card {...other} sx={{p: 1, height: height || 500}}>
+    <Card {...other} sx={{ p: 1, height: height || 500 }}>
       {series.map((item) => (
-        <Box key={item.year} sx={{p: 0, height: '100%'}} dir="ltr">
+        <Box key={item.year} sx={{ p: 0, height: '100%' }} dir="ltr">
           {item.year === seriesData && (
-            <Chart type="area"  series={item.data} options={chartOptions} height="100%"/>
+            <Chart type="area" series={item.data} options={chartOptions} height="100%" />
           )}
         </Box>
       ))}

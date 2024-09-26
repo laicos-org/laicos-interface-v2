@@ -1,5 +1,5 @@
 // routes
-import {DN404_DEFINE} from 'src/descriptions/DN404';
+import { DN404_DEFINE } from 'src/descriptions/DN404';
 import { PATH_DASHBOARD } from '../../../routes/paths';
 // components
 import Label from '../../../components/label';
@@ -66,27 +66,25 @@ const navConfig = [
   {
     subheader: 'List',
     items: [
-      
       // USER
       {
         title: 'NFTs Fairlaunch',
         path: PATH_DASHBOARD.dn404.root,
         icon: ICONS.menuItem,
-        caption: 'Laicos use EIP-721, EIP-1155, DN-404 (an implementation of a co-joined ERC20 and ERC721 pair) as main standard NFTs',
+        caption:
+          'Laicos use EIP-721, EIP-1155, DN-404 (an implementation of a co-joined ERC20 and ERC721 pair) as main standard NFTs',
       },
       // INVOICE
 
       // BLOG
       // { title: 'Create DN404', icon: ICONS.label, path: PATH_DASHBOARD.createDn404.create, caption: DN404_DEFINE},
-     
-      
 
       // {
       //   title: 'More',
       //   path: PATH_DASHBOARD.invoice.root,
       //   icon: ICONS.folder,
       //   children: [
-         
+
       //     // { title: 'tx history', path: PATH_DASHBOARD.invoice.list },
       //     // { title: 'Layout for fairlaunch descriptions', path: PATH_DASHBOARD.invoice.demoView },
       //     // { title: 'create', path: PATH_DASHBOARD.invoice.new },

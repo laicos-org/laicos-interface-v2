@@ -1,14 +1,14 @@
-import {formatAddress} from 'src/utils/formatAddress';
+import { formatAddress } from 'src/utils/formatAddress';
 import _mock from '../_mock';
 import { randomNumberRange, randomInArray } from '../utils';
-import DN404Medias from "../../DN404.media.json"
-import DN404MediasPost from "../../DN404.media.post.json"
+import DN404Medias from '../../DN404.media.json';
+import DN404MediasPost from '../../DN404.media.post.json';
 // ----------------------------------------------------------------------
 
 export const _userAbout = {
   id: _mock.id(1),
   cover: randomInArray(DN404Medias),
-  avatar:  randomInArray(DN404Medias),
+  avatar: randomInArray(DN404Medias),
   role: 'Product Manager',
   follower: randomNumberRange(999, 99999),
   following: randomNumberRange(999, 99999),

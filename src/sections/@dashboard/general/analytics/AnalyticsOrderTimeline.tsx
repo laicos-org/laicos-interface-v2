@@ -9,7 +9,7 @@ import {
   TimelineConnector,
 } from '@mui/lab';
 // utils
-import {randomInArray} from 'src/_mock';
+import { randomInArray } from 'src/_mock';
 import { fDateTime } from '../../../../utils/formatTime';
 
 // ----------------------------------------------------------------------
@@ -61,11 +61,7 @@ function OrderItem({ item, isLast }: OrderItemProps) {
   return (
     <TimelineItem>
       <TimelineSeparator>
-        <TimelineDot
-          color={
-            randomInArray(['primary', 'success','info', 'warning', 'error'])
-          }
-        />
+        <TimelineDot color={randomInArray(['primary', 'success', 'info', 'warning', 'error'])} />
         {isLast ? null : <TimelineConnector />}
       </TimelineSeparator>
 

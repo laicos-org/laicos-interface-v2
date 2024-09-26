@@ -1,7 +1,7 @@
 import { AptosWalletAdapterProvider } from '@aptos-labs/wallet-adapter-react';
 import { OKXWallet } from '@okwallet/aptos-wallet-adapter';
 import { PropsWithChildren } from 'react';
-import { Network } from "@aptos-labs/ts-sdk";
+import { Network } from '@aptos-labs/ts-sdk';
 
 export const Web3AptosWalletProvider = ({ children }: PropsWithChildren) => {
   const wallets = [new OKXWallet()];

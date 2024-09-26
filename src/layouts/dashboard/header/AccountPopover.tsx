@@ -43,7 +43,7 @@ const OPTIONS = [
   // },
   {
     label: 'Settings',
-    linkTo: '/dashboard/user/profile'
+    linkTo: '/dashboard/user/profile',
   },
 ];
 
@@ -187,8 +187,9 @@ export default function AccountPopover() {
           </Stack>
         ) : (
           <Stack fontSize="10px">
-            <Button variant="soft" startIcon={<Iconify icon="eva:clipboard-fill" />}
-            >Wallet Connect</Button>
+            <Button variant="soft" startIcon={<Iconify icon="eva:clipboard-fill" />}>
+              Wallet Connect
+            </Button>
             <Stack sx={{ opacity: '0', position: 'absolute' }}>
               <AptosWalletConnector />
             </Stack>

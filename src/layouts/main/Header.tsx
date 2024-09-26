@@ -31,7 +31,7 @@ export default function Header() {
   const isOffset = useOffSetTop(HEADER.H_MAIN_DESKTOP);
 
   return (
-    <AppBar ref={carouselRef} color="transparent" sx={{ boxShadow: 0,width: '100%' }}>
+    <AppBar ref={carouselRef} color="transparent" sx={{ boxShadow: 0, width: '100%' }}>
       <Toolbar
         disableGutters
         sx={{
@@ -54,20 +54,14 @@ export default function Header() {
         <Container sx={{ height: 1, display: 'flex', alignItems: 'center' }}>
           <Logo />
 
-          <Link
-            href="#"
-            target="_blank"
-            rel="noopener"
-            underline="none"
-            sx={{ ml: 1 }}
-          >
+          <Link href="#" target="_blank" rel="noopener" underline="none" sx={{ ml: 1 }}>
             <Label color="info"> v0.1.7 </Label>
           </Link>
 
           <Box sx={{ flexGrow: 1 }} />
 
           {isDesktop && <NavDesktop isOffset={isOffset} data={navConfig} />}
-{/* 
+          {/* 
           <Button variant="contained" target="_blank" rel="noopener" href={PATH_MINIMAL_ON_STORE}>
             Dapp (BETA)
           </Button> */}

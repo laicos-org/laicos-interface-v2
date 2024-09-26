@@ -1,11 +1,6 @@
-import {Helmet} from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 // @mui
-import {
-  Container,
-  Divider,
-  Grid,
-  Stack
-} from '@mui/material';
+import { Container, Divider, Grid, Stack } from '@mui/material';
 // auth
 // form
 // @mui
@@ -16,15 +11,15 @@ import {
 // sections
 
 import useResponsive from 'src/hooks/useResponsive';
-import {ICONS} from 'src/layouts/dashboard/nav/config-navigation';
-import {DN404List} from 'src/sections/@dashboard/e-commerce/shop';
-import {AnalyticsOrderTimeline} from 'src/sections/@dashboard/general/analytics';
+import { ICONS } from 'src/layouts/dashboard/nav/config-navigation';
+import { DN404List } from 'src/sections/@dashboard/e-commerce/shop';
+import { AnalyticsOrderTimeline } from 'src/sections/@dashboard/general/analytics';
 import DN404Invite from 'src/sections/@dashboard/general/app/DN404Invite';
 import DN404Recommends from 'src/sections/@dashboard/general/app/DN404Recommends';
-import {ProfilePostCard} from 'src/sections/@dashboard/user/profile';
+import { ProfilePostCard } from 'src/sections/@dashboard/user/profile';
 import ProfilePostInput from 'src/sections/@dashboard/user/profile/home/ProfilePostInput';
-import {useSettingsContext} from '../../components/settings';
-import {useDispatch,useSelector} from '../../redux/store';
+import { useSettingsContext } from '../../components/settings';
+import { useDispatch, useSelector } from '../../redux/store';
 // _mock_
 import {
   _analyticOrderTimeline,
@@ -46,7 +41,6 @@ const sideSetting = [
   },
 ];
 export default function DN404HomePage() {
-
   const dispatch = useDispatch();
 
   const { products, checkout } = useSelector((state) => state.product);

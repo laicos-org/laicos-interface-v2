@@ -11,7 +11,7 @@ import Chart, { useChart } from '../../../../components/chart';
 interface Props extends CardProps {
   title?: string;
   subheader?: string;
-  height?:number;
+  height?: number;
   chart: {
     categories?: string[];
     colors?: string[];
@@ -44,7 +44,7 @@ export default function DN404DerivativeChart({ title, subheader, chart, height, 
   });
 
   return (
-    <Card {...other} sx={{height:  height || 600}}>
+    <Card {...other} sx={{ height: height || 600 }}>
       {/* <CardHeader
         title={title}
         subheader={subheader}
@@ -67,7 +67,7 @@ export default function DN404DerivativeChart({ title, subheader, chart, height, 
       {series.map((item) => (
         <Box key={item.year} sx={{ mt: 3, mx: 3, height: '100%' }} dir="ltr">
           {item.year === seriesData && (
-            <Chart type="area" series={item.data} options={chartOptions} height='100%' />
+            <Chart type="area" series={item.data} options={chartOptions} height="100%" />
           )}
         </Box>
       ))}

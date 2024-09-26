@@ -63,8 +63,8 @@ export default function HomePage() {
           bgcolor: 'background.default',
         }}
       > */}
-        {/* <HomeLaicos /> */}
-{/* 
+      {/* <HomeLaicos /> */}
+      {/* 
         <HomeHugePackElements />
 
         <HomeForDesigner />

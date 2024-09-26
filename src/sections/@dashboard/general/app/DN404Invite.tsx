@@ -74,7 +74,7 @@ export default function DN404Invite({ title, subheader, list, ...other }: Props)
           '& .MuiCardHeader-action': { alignSelf: 'center' },
         }}
       />
-{/* 
+      {/* 
       <Carousel ref={carouselRef} {...carouselSettings}>
         {list.map((item) => (
           <ReviewItem key={item.id} item={item} />

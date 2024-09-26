@@ -1,18 +1,18 @@
-import {useEffect,useRef,useState} from 'react';
+import { useEffect, useRef, useState } from 'react';
 // @mui
-import {Box,Card,Divider,Tab,Tabs} from '@mui/material';
-import {useTheme} from '@mui/material/styles';
+import { Box, Card, Divider, Tab, Tabs } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 // utils
 import useResponsive from 'src/hooks/useResponsive';
 // @types
-import {Stack} from '@mui/system';
-import {IDN404MetaData} from '../../../../@types/DN404';
+import { Stack } from '@mui/system';
+import { IDN404MetaData } from '../../../../@types/DN404';
 // components
 import Carousel from '../../../../components/carousel';
 import Lightbox from '../../../../components/lightbox';
-import {DN404LineChart} from '../../general/app';
+import { DN404LineChart } from '../../general/app';
 import DN404CandleChart from '../../general/app/DN404CandleChart';
-import {DN404DerivativeChart} from '../../general/e-commerce';
+import { DN404DerivativeChart } from '../../general/e-commerce';
 
 // ----------------------------------------------------------------------
 
@@ -93,7 +93,9 @@ export default function DN404DetailsCarousel({ product }: Props) {
 
   const [selectedImage, setSelectedImage] = useState<number>(-1);
 
-  const [currentTabTrade, setCurrentTabTrade] = useState<'line' | 'candle'>(isDesktop ? 'candle' : 'line');
+  const [currentTabTrade, setCurrentTabTrade] = useState<'line' | 'candle'>(
+    isDesktop ? 'candle' : 'line'
+  );
 
   const imagesLightbox = product.images.map((img) => ({ src: img }));
 

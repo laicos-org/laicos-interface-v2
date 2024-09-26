@@ -6,12 +6,12 @@ import { randomInArray, randomNumberRange } from '../utils';
 export const _appRelated = ['Jiran', 'Usop', 'Firon'].map((name, index) => ({
   id: _mock.id(index),
   name,
-  tag: `@${  name}`,
+  tag: `@${name}`,
   system: (index === 2 && 'Windows') || (index === 4 && 'Windows') || 'Mac',
   price: index === 0 || index === 2 || index === 4 ? 0 : _mock.number.price(index),
   rating: _mock.number.rating(index),
   review: randomNumberRange(999, 99999),
-  
+
   shortcut:
     (name === 'Jiran' && randomInArray(DN404MediasList)) ||
     (name === 'Usop' && randomInArray(DN404MediasList)) ||
@@ -19,12 +19,11 @@ export const _appRelated = ['Jiran', 'Usop', 'Firon'].map((name, index) => ({
     (name === 'Rades' && randomInArray(DN404MediasList)) ||
     randomInArray(DN404MediasList),
 }));
-
 
 export const _appRelated2 = ['Waprd', 'David', 'Pendo'].map((name, index) => ({
   id: _mock.id(index),
   name,
-  tag: `#${  name}`,
+  tag: `#${name}`,
   system: (index === 2 && 'Windows') || (index === 4 && 'Windows') || 'Mac',
   price: index === 0 || index === 2 || index === 4 ? 0 : _mock.number.price(index),
   rating: _mock.number.rating(index),
@@ -36,7 +35,6 @@ export const _appRelated2 = ['Waprd', 'David', 'Pendo'].map((name, index) => ({
     (name === 'Rades' && randomInArray(DN404MediasList)) ||
     randomInArray(DN404MediasList),
 }));
-
 
 // ----------------------------------------------------------------------
 

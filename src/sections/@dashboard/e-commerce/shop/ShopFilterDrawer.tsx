@@ -34,9 +34,9 @@ export const FILTER_GENDER_OPTIONS = [
 ];
 
 export const FILTER_CATEGORY_OPTIONS = [
-  { label: 'Fullfill', value: 'fullfill'},
-  { label: 'Inprogress', value: "inprogress"},
-  { label: 'Listed', value: 'listed'},
+  { label: 'Fullfill', value: 'fullfill' },
+  { label: 'Inprogress', value: 'inprogress' },
+  { label: 'Listed', value: 'listed' },
 ];
 
 export const FILTER_RATING_OPTIONS = ['up4Star', 'up3Star', 'up2Star', 'up1Star'];

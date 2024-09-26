@@ -12,7 +12,7 @@ import Scrollbar from '../../../../components/scrollbar';
 type ItemProps = {
   id: string;
   name: string;
-  tag:string;
+  tag: string;
   system: string;
   price: number;
   rating: number;
@@ -65,14 +65,12 @@ function ApplicationItem({ app }: ApplicationItemProps) {
           bgcolor: 'background.neutral',
         }}
       >
-        <Box component="img" src={shortcut} sx={{ width: 48, height: 48,borderRadius: 1.5,
- }} />
+        <Box component="img" src={shortcut} sx={{ width: 48, height: 48, borderRadius: 1.5 }} />
       </Box>
 
       <Box sx={{ flexGrow: 1, minWidth: 160 }}>
         <Typography variant="subtitle2">{name}</Typography>
         <Stack direction="row" alignItems="center" sx={{ mt: 0.5, color: 'text.secondary' }}>
-
           {/* <Typography variant="caption" sx={{ mr: 1 }} /> */}
 
           <Label variant="soft" color={price === 0 ? 'success' : 'error'}>
@@ -83,7 +81,9 @@ function ApplicationItem({ app }: ApplicationItemProps) {
       </Box>
 
       <Stack alignItems="flex-end" sx={{ pr: 3 }}>
-        <Button color="success" variant="soft">Follow</Button>
+        <Button color="success" variant="soft">
+          Follow
+        </Button>
         {/* <Rating readOnly size="small" precision={0.5} name="reviews" value={rating} />
         <Typography variant="caption" sx={{ mt: 0.5, color: 'text.secondary' }}>
           {fShortenNumber(review)} reviews

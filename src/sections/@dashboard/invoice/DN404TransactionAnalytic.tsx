@@ -17,7 +17,14 @@ type Props = {
   color?: string;
 };
 
-export default function DN404TransactionAnalytic({ title, total, icon, color, percent, price }: Props) {
+export default function DN404TransactionAnalytic({
+  title,
+  total,
+  icon,
+  color,
+  percent,
+  price,
+}: Props) {
   return (
     <Stack
       direction="row"

@@ -50,7 +50,7 @@ import { ThemeSettings, SettingsProvider } from './components/settings';
 
 import { AuthProvider } from './auth/JwtContext';
 import { Web3ModalProvider } from './auth/Web3Modal';
-import {Web3AptosWalletProvider} from './auth/Web3AptosModal';
+import { Web3AptosWalletProvider } from './auth/Web3AptosModal';
 // import { AuthProvider } from './auth/Auth0Context';
 // import { AuthProvider } from './auth/FirebaseContext';
 // import { AuthProvider } from './auth/AwsCognitoContext';
@@ -60,35 +60,35 @@ import {Web3AptosWalletProvider} from './auth/Web3AptosModal';
 export default function App() {
   return (
     <Web3AptosWalletProvider>
-    <Web3ModalProvider>
-      <AuthProvider>
-        <HelmetProvider>
-          <ReduxProvider store={store}>
-            <PersistGate loading={null} persistor={persistor}>
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <SettingsProvider>
-                  <BrowserRouter>
-                    <ScrollToTop />
-                    <MotionLazyContainer>
-                      <ThemeProvider>
-                        <ThemeSettings>
-                          <ThemeLocalization>
-                            <SnackbarProvider>
-                              <StyledChart />
-                              <Router />
-                            </SnackbarProvider>
-                          </ThemeLocalization>
-                        </ThemeSettings>
-                      </ThemeProvider>
-                    </MotionLazyContainer>
-                  </BrowserRouter>
-                </SettingsProvider>
-              </LocalizationProvider>
-            </PersistGate>
-          </ReduxProvider>
-        </HelmetProvider>
-      </AuthProvider>
-    </Web3ModalProvider>
+      <Web3ModalProvider>
+        <AuthProvider>
+          <HelmetProvider>
+            <ReduxProvider store={store}>
+              <PersistGate loading={null} persistor={persistor}>
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <SettingsProvider>
+                    <BrowserRouter>
+                      <ScrollToTop />
+                      <MotionLazyContainer>
+                        <ThemeProvider>
+                          <ThemeSettings>
+                            <ThemeLocalization>
+                              <SnackbarProvider>
+                                <StyledChart />
+                                <Router />
+                              </SnackbarProvider>
+                            </ThemeLocalization>
+                          </ThemeSettings>
+                        </ThemeProvider>
+                      </MotionLazyContainer>
+                    </BrowserRouter>
+                  </SettingsProvider>
+                </LocalizationProvider>
+              </PersistGate>
+            </ReduxProvider>
+          </HelmetProvider>
+        </AuthProvider>
+      </Web3ModalProvider>
     </Web3AptosWalletProvider>
   );
 }

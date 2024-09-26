@@ -228,7 +228,7 @@ export default function DN404TradeHistory() {
   };
 
   return (
-    <div style={{width: '100%'}}>
+    <div style={{ width: '100%' }}>
       <Helmet>
         <title>Token history | Laicos</title>
       </Helmet>
@@ -304,7 +304,7 @@ export default function DN404TradeHistory() {
           </Tabs>
 
           <Divider />
-{/* 
+          {/* 
           <InvoiceTableToolbar
             isFiltered={isFiltered}
             filterName={filterName}

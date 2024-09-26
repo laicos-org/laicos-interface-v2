@@ -41,12 +41,7 @@ export const TAGS_OPTION = [
   '3 Idiots',
 ];
 
-
-export const NFTS_OPTIONS = [
-  "EIP-721",
-  "EIP-1155",
-  "DN-404"
-];
+export const NFTS_OPTIONS = ['EIP-721', 'EIP-1155', 'DN-404'];
 
 // ----------------------------------------------------------------------
 

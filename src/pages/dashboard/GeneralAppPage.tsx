@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { useTheme } from '@mui/material/styles';
 import { Container, Grid, Stack, Button } from '@mui/material';
 // auth
-import {AnalyticsConversionRates} from 'src/sections/@dashboard/general/analytics';
+import { AnalyticsConversionRates } from 'src/sections/@dashboard/general/analytics';
 import { useAuthContext } from '../../auth/useAuthContext';
 // _mock_
 import {
@@ -149,8 +149,11 @@ export default function GeneralAppPage() {
                   {
                     year: '2019',
                     data: [
-                      { name: 'Long ratio', data: [0.10, 0.41, 0.35, 0.51, 0.49, 0.62, 0.69, 0.91] },
-                      { name: 'Short ratio', data: [0.10, 0.34, 0.13, 0.56, 0.77, 0.88, 0.99, 0.77] },
+                      { name: 'Long ratio', data: [0.1, 0.41, 0.35, 0.51, 0.49, 0.62, 0.69, 0.91] },
+                      {
+                        name: 'Short ratio',
+                        data: [0.1, 0.34, 0.13, 0.56, 0.77, 0.88, 0.99, 0.77],
+                      },
                     ],
                   },
                 ],

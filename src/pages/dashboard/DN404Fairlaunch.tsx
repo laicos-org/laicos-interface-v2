@@ -6,9 +6,9 @@ import { useForm } from 'react-hook-form';
 // @mui
 import { Container, Typography, Stack, Tooltip } from '@mui/material';
 // redux
-import {useLocales} from 'src/locales';
-import {DN404_DEFINE, LAICOS_DEFINE_FAIRLAUNCH, LAICOS_DN404} from 'src/descriptions/DN404';
-import {Box} from '@mui/system';
+import { useLocales } from 'src/locales';
+import { DN404_DEFINE, LAICOS_DEFINE_FAIRLAUNCH, LAICOS_DN404 } from 'src/descriptions/DN404';
+import { Box } from '@mui/system';
 import Iconify from 'src/components/iconify';
 import { useDispatch, useSelector } from '../../redux/store';
 import { getProducts } from '../../redux/slices/DN404';
@@ -40,7 +40,7 @@ export default function DN404Fairlaunch() {
   const { products, checkout } = useSelector((state) => state.product);
 
   const [openFilter, setOpenFilter] = useState(false);
-  const {translate} = useLocales()
+  const { translate } = useLocales();
   const defaultValues = {
     gender: [],
     category: 'All',
@@ -97,16 +97,16 @@ export default function DN404Fairlaunch() {
       <FormProvider methods={methods}>
         <Container maxWidth={themeStretch ? false : 'lg'}>
           <Typography variant="h4" gutterBottom>
-          <Tooltip title={`${translate(LAICOS_DEFINE_FAIRLAUNCH)}`} arrow>
-          <Box component="span">
-              Exlusive NFTs Fairlaunch 
-            <Iconify icon="eva:info-outline" ml={1} color="gray" width={16} />
-          </Box>
-        </Tooltip>
+            <Tooltip title={`${translate(LAICOS_DEFINE_FAIRLAUNCH)}`} arrow>
+              <Box component="span">
+                Exlusive NFTs Fairlaunch
+                <Iconify icon="eva:info-outline" ml={1} color="gray" width={16} />
+              </Box>
+            </Tooltip>
           </Typography>
 
           <Typography color="GrayText" gutterBottom>
-             {`${translate(LAICOS_DN404)}`}
+            {`${translate(LAICOS_DN404)}`}
           </Typography>
 
           <Stack

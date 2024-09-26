@@ -166,9 +166,10 @@ function Description() {
 
       <m.div variants={varFade().in}>
         <Typography variant="body2" sx={{ textAlign: 'center' }}>
-          Revolutionize Your Social Experience. Own Your Data, Control Your Content, and Access Exclusive Features with Web3 Technology
+          Revolutionize Your Social Experience. Own Your Data, Control Your Content, and Access
+          Exclusive Features with Web3 Technology
         </Typography>
-        </m.div>
+      </m.div>
 
       <m.div variants={varFade().in}>
         <Stack spacing={1.5} direction={{ xs: 'column-reverse', sm: 'row' }} sx={{ my: 5 }}>
@@ -218,7 +219,6 @@ function Description() {
           </Button>
         </Stack>
       </m.div>
-
     </StyledDescription>
   );
 }

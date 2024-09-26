@@ -15,4 +15,3 @@ export function randomInArray<T>(array: T[]) {
 }
 
 export default axiosInstance;
-

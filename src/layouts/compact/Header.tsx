@@ -43,7 +43,6 @@ export default function Header({ isOffset }: Props) {
         }}
       >
         <Logo />
-       
 
         <Link to={PATH_PAGE.faqs} component={RouterLink} variant="subtitle2" color="inherit">
           Need Help?

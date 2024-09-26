@@ -238,7 +238,11 @@ export default function ProfilePostCard({ post }: Props) {
           p: (_theme) => _theme.spacing(0, 3, 3, 3),
         }}
       >
-        <CustomAvatar src={user?.photoURL} alt={user?.displayName} name={user?.displayName} />
+        <CustomAvatar
+          src={post.author.avatarUrl}
+          alt={user?.displayName}
+          name={user?.displayName}
+        />
 
         <InputBase
           fullWidth

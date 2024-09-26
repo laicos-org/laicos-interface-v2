@@ -53,7 +53,9 @@ export default function AppWidgetSummary({ title, percent, total, chart, sx, ...
   return (
     <Card sx={{ display: 'flex', alignItems: 'center', p: 3, ...sx }} {...other}>
       <Box sx={{ flexGrow: 1 }}>
-        <Typography variant="subtitle2" noWrap>{title}</Typography>
+        <Typography variant="subtitle2" noWrap>
+          {title}
+        </Typography>
 
         <TrendingInfo percent={percent} />
 

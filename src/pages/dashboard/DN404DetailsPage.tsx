@@ -1,22 +1,22 @@
-import {useEffect,useState} from 'react';
-import {Helmet} from 'react-helmet-async';
-import {useParams} from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useParams } from 'react-router-dom';
 // @mui
-import {Box,Card,Container,Divider,Grid,Stack,Tab,Tabs,Typography} from '@mui/material';
-import {alpha} from '@mui/material/styles';
+import { Box, Card, Container, Divider, Grid, Stack, Tab, Tabs, Typography } from '@mui/material';
+import { alpha } from '@mui/material/styles';
 // redux
-import {LAICOS_DEFINE_FAIRLAUNCH, LAICOS_DN404} from 'src/descriptions/DN404';
-import {addToCart,getProduct,gotoStep} from '../../redux/slices/DN404';
-import {useDispatch,useSelector} from '../../redux/store';
+import { LAICOS_DEFINE_FAIRLAUNCH, LAICOS_DN404 } from 'src/descriptions/DN404';
+import { addToCart, getProduct, gotoStep } from '../../redux/slices/DN404';
+import { useDispatch, useSelector } from '../../redux/store';
 // routes
 // @types
-import {ICheckoutCartItem} from '../../@types/DN404';
+import { ICheckoutCartItem } from '../../@types/DN404';
 // components
 import CustomBreadcrumbs from '../../components/custom-breadcrumbs';
 import Iconify from '../../components/iconify';
 import Markdown from '../../components/markdown';
-import {useSettingsContext} from '../../components/settings';
-import {SkeletonProductDetails} from '../../components/skeleton';
+import { useSettingsContext } from '../../components/settings';
+import { SkeletonProductDetails } from '../../components/skeleton';
 // sections
 import CartWidget from '../../sections/@dashboard/e-commerce/CartWidget';
 import {
@@ -84,13 +84,14 @@ export default function DN404DetailsPage() {
       label: 'description',
       component: product ? <Markdown children={product?.description} /> : null,
     },
- 
   ];
 
   return (
     <>
       <Helmet>
-        <title>{`Token ${product?.name.split(' ')[0].toUpperCase()} / (${product?.name}) | Laicos`}</title>
+        <title>{`Token ${product?.name.split(' ')[0].toUpperCase()} / (${
+          product?.name
+        }) | Laicos`}</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
@@ -98,7 +99,7 @@ export default function DN404DetailsPage() {
           heading={`${product?.name.split(' ')[0].toUpperCase()} / (${product?.name})`}
           links={[
             {
-              name: LAICOS_DEFINE_FAIRLAUNCH
+              name: LAICOS_DEFINE_FAIRLAUNCH,
             },
           ]}
         />
@@ -110,7 +111,6 @@ export default function DN404DetailsPage() {
             <Grid container spacing={3}>
               <Grid item xs={12} md={6} lg={7}>
                 <DN404DetailsCarousel product={product} />
-                
               </Grid>
 
               <Grid item xs={12} md={6} lg={5}>
