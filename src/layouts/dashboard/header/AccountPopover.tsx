@@ -105,7 +105,7 @@ export default function AccountPopover() {
             mx: 'auto',
           }}
         />
-        {/* <Stack>
+        <Stack>
           {wallet.data?.account?.address ? (
             <Tooltip title={`${'Buy crypto via 1Inch on ramp'}`} arrow>
               <Button
@@ -127,7 +127,7 @@ export default function AccountPopover() {
           ) : (
             ''
           )}
-        </Stack> */}
+        </Stack>
         <Stack>
           <Tooltip title={`${'Buy crypto via Coinbase on ramp'}`} arrow>
             <Button
@@ -151,10 +151,9 @@ export default function AccountPopover() {
           </Tooltip>
         </Stack>
 
-        {/* <Web3ModalNetworkButton /> */}
-        {_wallet.account?.address ? (
+        <Web3ModalWalletButton />
+        {/* {_wallet.account?.address ? (
           <Stack>
-            {/* <Button variant='soft'>{formatAddress(_wallet.account?.address)}</Button> */}
 
             <Button
               onClick={handleOpenPopover}
@@ -194,7 +193,7 @@ export default function AccountPopover() {
               <AptosWalletConnector />
             </Stack>
           </Stack>
-        )}
+        )} */}
       </Stack>
 
       <MenuPopover open={openPopover} onClose={handleClosePopover} sx={{ width: 200, p: 0 }}>
